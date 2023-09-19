@@ -1972,21 +1972,20 @@
 								"method": "POST",
 								"header": [],
 								"url": {
-									"raw": "{{base_url}}course/PHP6/subject/list",
+									"raw": "{{base_url}}course/PHP6/subjects",
 									"host": [
 										"{{base_url}}course"
 									],
 									"path": [
 										"PHP6",
-										"subject",
-										"list"
+										"subjects"
 									]
 								}
 							},
 							"response": []
 						},
 						{
-							"name": "Publish/Unpublish subject Copy",
+							"name": "Publish/Unpublish subject",
 							"id": "2fcce5c0-9db7-44b0-a1f3-204537bcc350",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
@@ -2110,31 +2109,36 @@
 											"key": "status",
 											"value": "",
 											"type": "text",
-											"description": "Optional. The status field must be one of: 0,1,2."
+											"description": "Optional. The status field must be one of: 0,1,2.",
+											"disabled": true
 										},
 										{
 											"key": "search",
 											"value": "",
 											"type": "text",
-											"description": "Optional. Any string value"
+											"description": "Optional. Any string value",
+											"disabled": true
 										},
 										{
 											"key": "results_per_page",
 											"value": "",
 											"type": "text",
-											"description": "Optional. The results_per_page field must only contain digits and must be greater than zero."
+											"description": "Optional. The results_per_page field must only contain digits and must be greater than zero.",
+											"disabled": true
 										},
 										{
 											"key": "page",
 											"value": "",
 											"type": "text",
-											"description": "Optional. The page field must only contain digits and must be greater than zero."
+											"description": "Optional. The page field must only contain digits and must be greater than zero.",
+											"disabled": true
 										},
 										{
 											"key": "order_by",
 											"value": "",
 											"type": "text",
-											"description": "Optional. If present, this field must be one of: [title_asc, title_desc, newest_first, newest_last]"
+											"description": "Optional. If present, this field must be one of: [title_asc, title_desc, newest_first, newest_last]",
+											"disabled": true
 										}
 									]
 								},
@@ -2153,7 +2157,7 @@
 							"response": []
 						},
 						{
-							"name": "Create lesson",
+							"name": "Create lesson in a subject",
 							"id": "512dba62-9a97-4e47-8294-af6748e609fd",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
@@ -2174,23 +2178,19 @@
 											"key": "description",
 											"value": "An HTML element is defined by a start tag, some content, and an end tag.\n",
 											"description": "Optional. String allowed",
-											"type": "text",
-											"disabled": true
-										},
-										{
-											"key": "subject_guid",
-											"value": "ENG1",
-											"description": "Optional. Subject guid",
 											"type": "text"
 										}
 									]
 								},
 								"url": {
-									"raw": "{{base_url}}lesson/create",
+									"raw": "{{base_url}}course/subject/PHP24/lesson/create",
 									"host": [
-										"{{base_url}}lesson"
+										"{{base_url}}course"
 									],
 									"path": [
+										"subject",
+										"PHP24",
+										"lesson",
 										"create"
 									]
 								}
@@ -2308,7 +2308,7 @@
 							]
 						},
 						{
-							"name": "Update lesson",
+							"name": "Edit lesson",
 							"id": "3be1a448-d1ea-426a-9d31-8c4e21d7adb0",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
@@ -2330,28 +2330,18 @@
 											"value": "HTML is the standard markup language for Web pages.\n\nWith HTML you can create your own Website.\n\nHTML is easy to learn - You will enjoy it!",
 											"description": "Optional. String allowed",
 											"type": "text"
-										},
-										{
-											"key": "status",
-											"value": "1",
-											"description": "Required. 0 (Unpublished), 1 (Published), 2 (Archive)",
-											"type": "text"
-										},
-										{
-											"key": "subject_guid",
-											"value": "ENG1",
-											"type": "text"
 										}
 									]
 								},
 								"url": {
-									"raw": "{{base_url}}lesson/update/HTM3",
+									"raw": "{{base_url}}course/lesson/PHP22/edit",
 									"host": [
-										"{{base_url}}lesson"
+										"{{base_url}}course"
 									],
 									"path": [
-										"update",
-										"HTM3"
+										"lesson",
+										"PHP22",
+										"edit"
 									]
 								}
 							},
@@ -2474,16 +2464,17 @@
 								"disableBodyPruning": true
 							},
 							"request": {
-								"method": "GET",
+								"method": "POST",
 								"header": [],
 								"url": {
-									"raw": "{{base_url}}lesson/view/BAS1",
+									"raw": "{{base_url}}course/lesson/PHP22/view",
 									"host": [
-										"{{base_url}}lesson"
+										"{{base_url}}course"
 									],
 									"path": [
-										"view",
-										"BAS1"
+										"lesson",
+										"PHP22",
+										"view"
 									]
 								}
 							},
@@ -2581,13 +2572,14 @@
 								"method": "DELETE",
 								"header": [],
 								"url": {
-									"raw": "{{base_url}}lesson/delete/HTM3",
+									"raw": "{{base_url}}course/lesson/PHP21/delete",
 									"host": [
-										"{{base_url}}lesson"
+										"{{base_url}}course"
 									],
 									"path": [
-										"delete",
-										"HTM3"
+										"lesson",
+										"PHP21",
+										"delete"
 									]
 								}
 							},
@@ -2607,20 +2599,21 @@
 									"formdata": [
 										{
 											"key": "status",
-											"value": "0",
+											"value": "1",
 											"type": "text",
 											"description": "Required. 0 (Unpublished), 1 (Published), 2 (Archive)"
 										}
 									]
 								},
 								"url": {
-									"raw": "{{base_url}}lesson/status/HTM4",
+									"raw": "{{base_url}}course/lesson/PHP22/change_status",
 									"host": [
-										"{{base_url}}lesson"
+										"{{base_url}}course"
 									],
 									"path": [
-										"status",
-										"HTM4"
+										"lesson",
+										"PHP22",
+										"change_status"
 									]
 								}
 							},
@@ -2633,16 +2626,17 @@
 								"disableBodyPruning": true
 							},
 							"request": {
-								"method": "GET",
+								"method": "POST",
 								"header": [],
 								"url": {
-									"raw": "{{base_url}}lesson/preview/HTM4",
+									"raw": "{{base_url}}course/lesson/PHP22/preview",
 									"host": [
-										"{{base_url}}lesson"
+										"{{base_url}}course"
 									],
 									"path": [
-										"preview",
-										"HTM4"
+										"lesson",
+										"PHP22",
+										"preview"
 									]
 								}
 							},
@@ -2737,20 +2731,92 @@
 								"disableBodyPruning": true
 							},
 							"request": {
-								"method": "GET",
+								"method": "POST",
 								"header": [],
 								"body": {
 									"mode": "formdata",
 									"formdata": []
 								},
 								"url": {
-									"raw": "{{base_url}}lesson/sections/HTM5",
+									"raw": "{{base_url}}course/lesson/PHP22/sections",
 									"host": [
-										"{{base_url}}lesson"
+										"{{base_url}}course"
 									],
 									"path": [
-										"sections",
-										"HTM5"
+										"lesson",
+										"PHP22",
+										"sections"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create section in lesson",
+							"id": "a74bcc1b-e0df-4ec5-8785-f0c334f534dc",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "title",
+											"value": "PHP Introduction ",
+											"description": "Required. Will provide the type of content being added. Accepted values are [html, file, link]. Default value is html",
+											"type": "text"
+										},
+										{
+											"key": "block[0][type]",
+											"value": "html",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "block[0][content]",
+											"value": "html asasg asjhass",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "block[1][type]",
+											"value": "file",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "block[1][content]",
+											"type": "file",
+											"value": null,
+											"disabled": true
+										},
+										{
+											"key": "block[2][type]",
+											"value": "link",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "block[2][content]",
+											"value": "https://www.youtube.com",
+											"type": "text",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "{{base_url}}course/lesson/PHP22/section/create",
+									"host": [
+										"{{base_url}}course"
+									],
+									"path": [
+										"lesson",
+										"PHP22",
+										"section",
+										"create"
 									]
 								}
 							},
@@ -3173,76 +3239,6 @@
 							"id": "16d2b765-9cc6-432d-bb86-8db221502c9f"
 						},
 						{
-							"name": "Add section",
-							"id": "a74bcc1b-e0df-4ec5-8785-f0c334f534dc",
-							"protocolProfileBehavior": {
-								"disableBodyPruning": true
-							},
-							"request": {
-								"method": "POST",
-								"header": [],
-								"body": {
-									"mode": "formdata",
-									"formdata": [
-										{
-											"key": "title",
-											"value": "PHP Introduction ",
-											"description": "Required. Will provide the type of content being added. Accepted values are [html, file, link]. Default value is html",
-											"type": "text"
-										},
-										{
-											"key": "block[0][type]",
-											"value": "html",
-											"type": "text",
-											"disabled": true
-										},
-										{
-											"key": "block[0][content]",
-											"value": "html asasg asjhass",
-											"type": "text",
-											"disabled": true
-										},
-										{
-											"key": "block[1][type]",
-											"value": "file",
-											"type": "text",
-											"disabled": true
-										},
-										{
-											"key": "block[1][content]",
-											"type": "file",
-											"value": null,
-											"disabled": true
-										},
-										{
-											"key": "block[2][type]",
-											"value": "link",
-											"type": "text",
-											"disabled": true
-										},
-										{
-											"key": "block[2][content]",
-											"value": "https://www.youtube.com",
-											"type": "text",
-											"disabled": true
-										}
-									]
-								},
-								"url": {
-									"raw": "{{base_url}}lesson/PHP9/section/create",
-									"host": [
-										"{{base_url}}lesson"
-									],
-									"path": [
-										"PHP9",
-										"section",
-										"create"
-									]
-								}
-							},
-							"response": []
-						},
-						{
 							"name": "Edit section",
 							"id": "18a0e91a-0787-4ef4-96bc-cc7cb883dd4e",
 							"protocolProfileBehavior": {
@@ -3256,21 +3252,21 @@
 									"formdata": [
 										{
 											"key": "title",
-											"value": "HTML INTRO3",
+											"value": "PHP Introduction2",
 											"description": "Required. Will provide the type of content being added. Accepted values are [html, file, link]. Default value is html",
 											"type": "text"
 										}
 									]
 								},
 								"url": {
-									"raw": "{{base_url}}lesson/edit_section/HTM8/HTM3",
+									"raw": "{{base_url}}course/section/PHP5/edit",
 									"host": [
-										"{{base_url}}lesson"
+										"{{base_url}}course"
 									],
 									"path": [
-										"edit_section",
-										"HTM8",
-										"HTM3"
+										"section",
+										"PHP5",
+										"edit"
 									]
 								}
 							},
@@ -3290,13 +3286,14 @@
 									"formdata": []
 								},
 								"url": {
-									"raw": "{{base_url}}lesson/view_section/HTM3",
+									"raw": "{{base_url}}course/section/PHP5/view",
 									"host": [
-										"{{base_url}}lesson"
+										"{{base_url}}course"
 									],
 									"path": [
-										"view_section",
-										"HTM3"
+										"section",
+										"PHP5",
+										"view"
 									]
 								}
 							},
