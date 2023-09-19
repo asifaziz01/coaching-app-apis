@@ -1174,7 +1174,7 @@
 							]
 						},
 						{
-							"name": "Search courses",
+							"name": "Search and filter courses",
 							"id": "0e35733e-e4a0-4d08-8ad5-68ea785990e9",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
@@ -1186,9 +1186,34 @@
 									"mode": "formdata",
 									"formdata": [
 										{
-											"key": "records_per_page",
+											"key": "results_per_page",
 											"value": "2",
-											"type": "text"
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "search",
+											"value": "",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "order_by",
+											"value": "",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "page",
+											"value": "2",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "status",
+											"value": "",
+											"type": "text",
+											"disabled": true
 										}
 									]
 								},
@@ -1295,13 +1320,13 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{base_url}}course/view/CS00001",
+									"raw": "{{base_url}}course/view/LEV2",
 									"host": [
 										"{{base_url}}course"
 									],
 									"path": [
 										"view",
-										"CS00001"
+										"LEV2"
 									]
 								}
 							},
@@ -1403,7 +1428,7 @@
 									"formdata": [
 										{
 											"key": "title",
-											"value": "PHP Tutorial",
+											"value": "PHP Tutorial 2",
 											"description": "Required. Alpha numeric and some special chars allowed",
 											"type": "text"
 										},
@@ -1562,23 +1587,17 @@
 											"value": "0",
 											"type": "text",
 											"description": "Required. 0 (Unpublished), 1 (Published), 2 (Archive)"
-										},
-										{
-											"key": "updated_by",
-											"value": "UR2",
-											"type": "text",
-											"description": "User GUID"
 										}
 									]
 								},
 								"url": {
-									"raw": "{{base_url}}course/update/new11",
+									"raw": "{{base_url}}course/update/LEV2",
 									"host": [
 										"{{base_url}}course"
 									],
 									"path": [
 										"update",
-										"new11"
+										"LEV2"
 									]
 								}
 							},
@@ -1705,26 +1724,20 @@
 									"formdata": [
 										{
 											"key": "status",
-											"value": "2",
+											"value": "1",
 											"type": "text",
 											"description": "Required. 0 (Unpublished), 1 (Published), 2 (Archive)"
-										},
-										{
-											"key": "updated_by",
-											"value": "CS00001",
-											"type": "text",
-											"description": "User GUID"
 										}
 									]
 								},
 								"url": {
-									"raw": "{{base_url}}course/status/CS00001",
+									"raw": "{{base_url}}course/status/LEV2",
 									"host": [
 										"{{base_url}}course"
 									],
 									"path": [
 										"status",
-										"CS00001"
+										"LEV2"
 									]
 								}
 							},
@@ -1837,13 +1850,35 @@
 								"method": "DELETE",
 								"header": [],
 								"url": {
-									"raw": "{{base_url}}course/delete/CS00003",
+									"raw": "{{base_url}}course/delete/LEV2",
 									"host": [
 										"{{base_url}}course"
 									],
 									"path": [
 										"delete",
-										"CS00003"
+										"LEV2"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Preview course",
+							"id": "113be360-5df7-4e91-af3c-4b25aebd2544",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}course/preview/LEV2",
+									"host": [
+										"{{base_url}}course"
+									],
+									"path": [
+										"preview",
+										"LEV2"
 									]
 								}
 							},
@@ -1856,1388 +1891,8 @@
 					"name": "Subjects",
 					"item": [
 						{
-							"name": "Lessons",
-							"item": [
-								{
-									"name": "Sections",
-									"item": [
-										{
-											"name": "Add section",
-											"id": "449ffd6e-9f04-4e74-bba2-1cfac60b6037",
-											"protocolProfileBehavior": {
-												"disableBodyPruning": true
-											},
-											"request": {
-												"method": "POST",
-												"header": [],
-												"body": {
-													"mode": "formdata",
-													"formdata": [
-														{
-															"key": "title",
-															"value": "",
-															"description": "Required. Will provide the type of content being added. Accepted values are [html, file, link]. Default value is html",
-															"type": "text"
-														},
-														{
-															"key": "block[0][type]",
-															"value": "html",
-															"type": "text",
-															"description": "Optional"
-														},
-														{
-															"key": "block[0][content]",
-															"value": "html asasg asjhass",
-															"type": "text",
-															"description": "Optional"
-														},
-														{
-															"key": "block[1][type]",
-															"value": "file",
-															"type": "text",
-															"description": "Optional"
-														},
-														{
-															"key": "block[1][content]",
-															"type": "file",
-															"description": "Optional",
-															"value": null
-														},
-														{
-															"key": "block[2][type]",
-															"value": "youtube",
-															"type": "text",
-															"description": "Optional"
-														},
-														{
-															"key": "block[2][content]",
-															"value": "https://www.youtube.com",
-															"type": "text",
-															"description": "Optional"
-														}
-													]
-												},
-												"url": {
-													"raw": "{{base_url}}lesson/add_section/HTM8",
-													"host": [
-														"{{base_url}}lesson"
-													],
-													"path": [
-														"add_section",
-														"HTM8"
-													]
-												}
-											},
-											"response": []
-										},
-										{
-											"name": "Edit section",
-											"id": "2c08842c-e41e-46bc-a2fc-36d6dc13a251",
-											"protocolProfileBehavior": {
-												"disableBodyPruning": true
-											},
-											"request": {
-												"method": "POST",
-												"header": [],
-												"body": {
-													"mode": "formdata",
-													"formdata": [
-														{
-															"key": "title",
-															"value": "HTML INTRO3",
-															"description": "Required. Will provide the type of content being added. Accepted values are [html, file, link]. Default value is html",
-															"type": "text"
-														}
-													]
-												},
-												"url": {
-													"raw": "{{base_url}}lesson/edit_section/HTM8/HTM3",
-													"host": [
-														"{{base_url}}lesson"
-													],
-													"path": [
-														"edit_section",
-														"HTM8",
-														"HTM3"
-													]
-												}
-											},
-											"response": []
-										},
-										{
-											"name": "View section",
-											"id": "8901daaf-20da-4f8e-8ae0-0086ef9301ce",
-											"protocolProfileBehavior": {
-												"disableBodyPruning": true
-											},
-											"request": {
-												"method": "GET",
-												"header": [],
-												"body": {
-													"mode": "formdata",
-													"formdata": []
-												},
-												"url": {
-													"raw": "{{base_url}}lesson/view_section/HTM3",
-													"host": [
-														"{{base_url}}lesson"
-													],
-													"path": [
-														"view_section",
-														"HTM3"
-													]
-												}
-											},
-											"response": []
-										},
-										{
-											"name": "Get section content",
-											"id": "083671b9-ca26-4180-a2c9-826b7b952309",
-											"protocolProfileBehavior": {
-												"disableBodyPruning": true
-											},
-											"request": {
-												"method": "GET",
-												"header": [],
-												"url": {
-													"raw": "{{base_url}}lesson/content/list/3",
-													"host": [
-														"{{base_url}}lesson"
-													],
-													"path": [
-														"content",
-														"list",
-														"3"
-													]
-												}
-											},
-											"response": []
-										}
-									],
-									"id": "aaf5aa25-5ba1-45dd-a380-20eb61395b3d"
-								},
-								{
-									"name": "Content",
-									"item": [
-										{
-											"name": "Add content",
-											"id": "01f7d488-97a9-4f8d-848c-639d29be4f3a",
-											"protocolProfileBehavior": {
-												"disableBodyPruning": true
-											},
-											"request": {
-												"method": "POST",
-												"header": [],
-												"body": {
-													"mode": "formdata",
-													"formdata": [
-														{
-															"key": "type",
-															"value": "html",
-															"description": "Required. Will provide the type of content being added. Accepted values are [html, file, link]. Default value is html",
-															"type": "text"
-														},
-														{
-															"key": "content",
-															"value": "HTML Elements4\nThe HTML element is everything from the start tag to the end tag:\n\n<tagname>Content goes here...</tagname>\nExamples of some HTML elements:\n\n<h1>My First Heading</h1>\n<p>My first paragraph.</p>\nStart tag\tElement content\tEnd tag\n<h1>\tMy First Heading\t</h1>\n<p>\tMy first paragraph.\t</p>\n<br>\tnone\tnone\n",
-															"description": "Required. Actual content. Content can be html, full path for audio/video/pdf/other files or links for youtube videos",
-															"type": "text"
-														}
-													]
-												},
-												"url": {
-													"raw": "{{base_url}}lesson/content/add/HTM3",
-													"host": [
-														"{{base_url}}lesson"
-													],
-													"path": [
-														"content",
-														"add",
-														"HTM3"
-													]
-												}
-											},
-											"response": []
-										},
-										{
-											"name": "Edit content",
-											"id": "3269ab75-b682-4ca0-9831-e4438efb1b10",
-											"protocolProfileBehavior": {
-												"disableBodyPruning": true
-											},
-											"request": {
-												"method": "POST",
-												"header": [],
-												"body": {
-													"mode": "formdata",
-													"formdata": [
-														{
-															"key": "type",
-															"value": "html",
-															"description": "Required. Will provide the type of content being added. Accepted values are [html, file, link]. Default value is html",
-															"type": "text"
-														},
-														{
-															"key": "content",
-															"value": "HTML Elements2\nThe HTML element is everything from the start tag to the end tag:\n\n<tagname>Content goes here...</tagname>\nExamples of some HTML elements:\n\n<h1>My First Heading</h1>\n<p>My first paragraph.</p>\nStart tag\tElement content\tEnd tag\n<h1>\tMy First Heading\t</h1>\n<p>\tMy first paragraph.\t</p>\n<br>\tnone\tnone\n",
-															"description": "Required. Actual content. Content can be html, full path for audio/video/pdf/other files or links for youtube videos",
-															"type": "text"
-														},
-														{
-															"key": "status",
-															"value": "1",
-															"description": "Optional. Values [0=Unpublished, 1=Published, 2=Archive]",
-															"type": "text"
-														},
-														{
-															"key": "created_by",
-															"value": "CA000013",
-															"description": "Required. ",
-															"type": "text"
-														},
-														{
-															"key": "content_guid",
-															"value": "CRD73",
-															"type": "text"
-														}
-													]
-												},
-												"url": {
-													"raw": "{{base_url}}lesson/content/edit/3",
-													"host": [
-														"{{base_url}}lesson"
-													],
-													"path": [
-														"content",
-														"edit",
-														"3"
-													]
-												}
-											},
-											"response": []
-										},
-										{
-											"name": "View content",
-											"id": "0d1e243c-e377-4a78-a017-8a2cab23d0b9",
-											"protocolProfileBehavior": {
-												"disableBodyPruning": true
-											},
-											"request": {
-												"method": "GET",
-												"header": [],
-												"url": {
-													"raw": "{{base_url}}lesson/content/view/74",
-													"host": [
-														"{{base_url}}lesson"
-													],
-													"path": [
-														"content",
-														"view",
-														"74"
-													]
-												}
-											},
-											"response": []
-										},
-										{
-											"name": "Set content status",
-											"id": "3cc89c68-e3d8-4878-885b-069aaefc7c24",
-											"protocolProfileBehavior": {
-												"disableBodyPruning": true
-											},
-											"request": {
-												"method": "POST",
-												"header": [],
-												"body": {
-													"mode": "formdata",
-													"formdata": [
-														{
-															"key": "status",
-															"value": "2",
-															"type": "text",
-															"description": "Required. 0 (Unpublished), 1 (Published), 2 (Archive)"
-														},
-														{
-															"key": "updated_by",
-															"value": "CS00001",
-															"type": "text",
-															"description": "User GUID"
-														}
-													]
-												},
-												"url": {
-													"raw": "{{base_url}}lesson/content/status/74",
-													"host": [
-														"{{base_url}}lesson"
-													],
-													"path": [
-														"content",
-														"status",
-														"74"
-													]
-												}
-											},
-											"response": []
-										},
-										{
-											"name": "Arrange content",
-											"id": "90fc917d-3fdc-4fef-82b5-cf1a558e2fe0",
-											"protocolProfileBehavior": {
-												"disableBodyPruning": true
-											},
-											"request": {
-												"method": "POST",
-												"header": [],
-												"body": {
-													"mode": "formdata",
-													"formdata": [
-														{
-															"key": "content[72]",
-															"value": "1",
-															"type": "text"
-														},
-														{
-															"key": "content[73]",
-															"value": "2",
-															"type": "text"
-														},
-														{
-															"key": "content[74]",
-															"value": "3",
-															"type": "text"
-														},
-														{
-															"key": "content[75]",
-															"value": "4",
-															"type": "text"
-														},
-														{
-															"key": "content[76]",
-															"value": "5",
-															"type": "text"
-														},
-														{
-															"key": "content[77]",
-															"value": "6",
-															"type": "text"
-														},
-														{
-															"key": "content[78]",
-															"value": "7",
-															"type": "text"
-														},
-														{
-															"key": "content[79]",
-															"value": "8",
-															"type": "text"
-														},
-														{
-															"key": "updated_by",
-															"value": "CA00001",
-															"type": "text"
-														}
-													]
-												},
-												"url": {
-													"raw": "{{base_url}}lesson/content/arrange/3",
-													"host": [
-														"{{base_url}}lesson"
-													],
-													"path": [
-														"content",
-														"arrange",
-														"3"
-													]
-												}
-											},
-											"response": []
-										},
-										{
-											"name": "Delete content",
-											"id": "e79e857e-87aa-4eb7-b50f-0e0ed6b129aa",
-											"protocolProfileBehavior": {
-												"disableBodyPruning": true
-											},
-											"request": {
-												"method": "DELETE",
-												"header": [],
-												"url": {
-													"raw": "{{base_url}}lesson/content/delete/66",
-													"host": [
-														"{{base_url}}lesson"
-													],
-													"path": [
-														"content",
-														"delete",
-														"66"
-													]
-												}
-											},
-											"response": []
-										},
-										{
-											"name": "Upload files",
-											"id": "33b996a0-6ae4-43ca-95d4-06e92952f294",
-											"protocolProfileBehavior": {
-												"disableBodyPruning": true
-											},
-											"request": {
-												"method": "POST",
-												"header": [],
-												"body": {
-													"mode": "formdata",
-													"formdata": [
-														{
-															"key": "userfile",
-															"type": "file",
-															"description": "Required",
-															"src": "/C:/Users/d_asi/Downloads/GTmetrix-report-mv-sanity.netlify.app-20230306T005216-v2djnAGE.pdf"
-														},
-														{
-															"key": "created_by",
-															"value": "CA00001",
-															"description": "Required",
-															"type": "text"
-														},
-														{
-															"key": "section_id",
-															"value": "3",
-															"description": "Required",
-															"type": "text"
-														}
-													]
-												},
-												"url": {
-													"raw": "{{base_url}}lesson/content/upload/3",
-													"host": [
-														"{{base_url}}lesson"
-													],
-													"path": [
-														"content",
-														"upload",
-														"3"
-													]
-												}
-											},
-											"response": []
-										},
-										{
-											"name": "Replace file",
-											"id": "9215c642-48ed-4778-9ada-1f74b4143e06",
-											"protocolProfileBehavior": {
-												"disableBodyPruning": true
-											},
-											"request": {
-												"method": "POST",
-												"header": [],
-												"body": {
-													"mode": "formdata",
-													"formdata": [
-														{
-															"key": "file_hash",
-															"value": "1678366722_dbaec60ccd6b39e88ea7.pdf",
-															"description": "Required",
-															"type": "text"
-														},
-														{
-															"key": "section_id",
-															"value": "3",
-															"type": "text"
-														},
-														{
-															"key": "userfile",
-															"description": "Required",
-															"type": "file",
-															"src": "/C:/Users/d_asi/Downloads/invoice.pdf"
-														},
-														{
-															"key": "created_by",
-															"value": "CA00001",
-															"description": "Required",
-															"type": "text"
-														}
-													]
-												},
-												"url": {
-													"raw": "{{base_url}}lesson/content/replace_file/3",
-													"host": [
-														"{{base_url}}lesson"
-													],
-													"path": [
-														"content",
-														"replace_file",
-														"3"
-													]
-												}
-											},
-											"response": []
-										},
-										{
-											"name": "Get file",
-											"id": "3bb1e564-1da9-4ec7-8adf-ad01660e7da9",
-											"protocolProfileBehavior": {
-												"disableBodyPruning": true
-											},
-											"request": {
-												"method": "GET",
-												"header": [],
-												"url": {
-													"raw": "{{base_url}}lesson/content/get_file?file_hash=1678367040_f870f5191fd4c2e393ac.pdf",
-													"host": [
-														"{{base_url}}lesson"
-													],
-													"path": [
-														"content",
-														"get_file"
-													],
-													"query": [
-														{
-															"key": "file_hash",
-															"value": "1678367040_f870f5191fd4c2e393ac.pdf"
-														}
-													]
-												}
-											},
-											"response": []
-										},
-										{
-											"name": "Delete file",
-											"id": "843d11a6-6105-49ad-aad2-95e9ef403114",
-											"protocolProfileBehavior": {
-												"disableBodyPruning": true
-											},
-											"request": {
-												"method": "DELETE",
-												"header": [],
-												"url": {
-													"raw": "{{base_url}}lesson/content/delete_file/1677273308_ac302c61355598e0f67f.png",
-													"host": [
-														"{{base_url}}lesson"
-													],
-													"path": [
-														"content",
-														"delete_file",
-														"1677273308_ac302c61355598e0f67f.png"
-													]
-												}
-											},
-											"response": []
-										}
-									],
-									"id": "67f0d0f9-1edb-4c2e-9f31-312bf7955f0b"
-								},
-								{
-									"name": "All lessons",
-									"id": "03481387-84c8-4fe2-aaa4-98199c46c92a",
-									"protocolProfileBehavior": {
-										"disableBodyPruning": true
-									},
-									"request": {
-										"method": "GET",
-										"header": [],
-										"url": {
-											"raw": "{{base_url}}lesson/list",
-											"host": [
-												"{{base_url}}lesson"
-											],
-											"path": [
-												"list"
-											]
-										}
-									},
-									"response": [
-										{
-											"id": "0bb8f720-5c7b-4fe5-819c-f333df49eb99",
-											"name": "Success",
-											"originalRequest": {
-												"method": "GET",
-												"header": [],
-												"url": {
-													"raw": "{{base_url}}lesson/list",
-													"host": [
-														"{{base_url}}lesson"
-													],
-													"path": [
-														"list"
-													]
-												}
-											},
-											"status": "OK",
-											"code": 200,
-											"_postman_previewlanguage": "json",
-											"header": [
-												{
-													"key": "Date",
-													"value": "Fri, 27 Jan 2023 06:33:18 GMT"
-												},
-												{
-													"key": "Server",
-													"value": "Apache"
-												},
-												{
-													"key": "X-Powered-By",
-													"value": "PHP/7.4.33"
-												},
-												{
-													"key": "Cache-control",
-													"value": "no-store, max-age=0, no-cache"
-												},
-												{
-													"key": "Strict-Transport-Security",
-													"value": "max-age=63072000; includeSubDomains"
-												},
-												{
-													"key": "X-Frame-Options",
-													"value": "SAMEORIGIN"
-												},
-												{
-													"key": "X-Content-Type-Options",
-													"value": "nosniff"
-												},
-												{
-													"key": "Upgrade",
-													"value": "h2,h2c"
-												},
-												{
-													"key": "Connection",
-													"value": "Upgrade, Keep-Alive"
-												},
-												{
-													"key": "Vary",
-													"value": "Accept-Encoding"
-												},
-												{
-													"key": "Content-Encoding",
-													"value": "gzip"
-												},
-												{
-													"key": "Content-Length",
-													"value": "303"
-												},
-												{
-													"key": "Keep-Alive",
-													"value": "timeout=3, max=500"
-												},
-												{
-													"key": "Content-Type",
-													"value": "application/json; charset=UTF-8"
-												}
-											],
-											"cookie": [],
-											"body": "{\n    \"success\": true,\n    \"message\": \"LESSONS_FOUND\",\n    \"payload\": {\n        \"meta\": {\n            \"first_page\": 1,\n            \"last_page\": 1,\n            \"current_page\": 1,\n            \"num_results\": 3,\n            \"total_results\": 3\n        },\n        \"data\": [\n            {\n                \"guid\": \"ORI9pFqr\",\n                \"title\": \"A new lesson\",\n                \"description\": \"\",\n                \"status\": \"0\",\n                \"created_by\": \"CA000019\",\n                \"created_on\": \"2023-01-25 04:21:11\",\n                \"updated_by\": \"CA000019\",\n                \"updated_on\": \"2023-01-25 04:21:11\"\n            },\n            {\n                \"guid\": \"LP2\",\n                \"title\": \"A new lesson\",\n                \"description\": \"\",\n                \"status\": \"0\",\n                \"created_by\": \"CA000019\",\n                \"created_on\": \"2023-01-25 04:23:12\",\n                \"updated_by\": \"CA000019\",\n                \"updated_on\": \"2023-01-25 04:23:12\"\n            },\n            {\n                \"guid\": \"LP20233\",\n                \"title\": \"A new lesson\",\n                \"description\": \"\",\n                \"status\": \"0\",\n                \"created_by\": \"CA000019\",\n                \"created_on\": \"2023-01-25 04:23:44\",\n                \"updated_by\": \"CA000019\",\n                \"updated_on\": \"2023-01-25 04:23:44\"\n            }\n        ]\n    }\n}"
-										}
-									]
-								},
-								{
-									"name": "Search and filter",
-									"id": "d1bbea82-1c65-4b25-88e8-824949698e62",
-									"protocolProfileBehavior": {
-										"disableBodyPruning": true
-									},
-									"request": {
-										"method": "POST",
-										"header": [],
-										"body": {
-											"mode": "formdata",
-											"formdata": [
-												{
-													"key": "status",
-													"value": "1",
-													"type": "text"
-												},
-												{
-													"key": "subject_guid",
-													"value": "PHP4",
-													"type": "text"
-												}
-											]
-										},
-										"url": {
-											"raw": "{{base_url}}lesson/list",
-											"host": [
-												"{{base_url}}lesson"
-											],
-											"path": [
-												"list"
-											]
-										}
-									},
-									"response": []
-								},
-								{
-									"name": "Search and filter V2",
-									"id": "2d216ea6-ea7f-4e24-b207-ee2b3b3e8ef6",
-									"protocolProfileBehavior": {
-										"disableBodyPruning": true
-									},
-									"request": {
-										"method": "POST",
-										"header": [],
-										"body": {
-											"mode": "formdata",
-											"formdata": [
-												{
-													"key": "status",
-													"value": "",
-													"type": "text",
-													"description": "Optional. The status field must be one of: [0,1,2]",
-													"disabled": true
-												},
-												{
-													"key": "search",
-													"value": "",
-													"type": "text",
-													"description": "Optional. Any string value",
-													"disabled": true
-												},
-												{
-													"key": "results_per_page",
-													"value": "",
-													"type": "text",
-													"description": "Optional. The results_per_page field must only contain digits and must be greater than zero.",
-													"disabled": true
-												},
-												{
-													"key": "page",
-													"value": "",
-													"type": "text",
-													"description": "Optional. The page field must only contain digits and must be greater than zero.",
-													"disabled": true
-												},
-												{
-													"key": "order_by",
-													"value": "",
-													"type": "text",
-													"description": "Optional. If present, this field must be one of: [title_asc, title_desc, newest_first, newest_last]",
-													"disabled": true
-												}
-											]
-										},
-										"url": {
-											"raw": "{{base_url}}course/PHP6/subject/PHP4/lessons",
-											"host": [
-												"{{base_url}}course"
-											],
-											"path": [
-												"PHP6",
-												"subject",
-												"PHP4",
-												"lessons"
-											]
-										}
-									},
-									"response": []
-								},
-								{
-									"name": "Create lesson",
-									"id": "b297b6bd-be94-4cb4-ba2d-190ffd7cbdac",
-									"protocolProfileBehavior": {
-										"disableBodyPruning": true
-									},
-									"request": {
-										"method": "POST",
-										"header": [],
-										"body": {
-											"mode": "formdata",
-											"formdata": [
-												{
-													"key": "title",
-													"value": "PHP Introduction",
-													"description": "Required. Alpha numeric and some special chars allowed",
-													"type": "text"
-												},
-												{
-													"key": "description",
-													"value": "An HTML element is defined by a start tag, some content, and an end tag.\n",
-													"description": "Optional. String allowed",
-													"type": "text",
-													"disabled": true
-												},
-												{
-													"key": "subject_guid",
-													"value": "ENG1",
-													"description": "Optional. Subject guid",
-													"type": "text"
-												}
-											]
-										},
-										"url": {
-											"raw": "{{base_url}}lesson/create",
-											"host": [
-												"{{base_url}}lesson"
-											],
-											"path": [
-												"create"
-											]
-										}
-									},
-									"response": [
-										{
-											"id": "053bf406-7d40-4b43-9572-68dd5a7a13dc",
-											"name": "Success",
-											"originalRequest": {
-												"method": "POST",
-												"header": [],
-												"body": {
-													"mode": "formdata",
-													"formdata": [
-														{
-															"key": "title",
-															"value": "A new lesson",
-															"description": "Required. Alpha numeric and some special chars allowed",
-															"type": "text"
-														},
-														{
-															"key": "description",
-															"value": "",
-															"description": "Optional. String allowed",
-															"type": "text"
-														},
-														{
-															"key": "status",
-															"value": "0",
-															"description": "Required. 0 (Unpublished), 1 (Published), 2 (Archive)",
-															"type": "text"
-														},
-														{
-															"key": "created_by",
-															"value": "CA000019",
-															"description": "User GUID",
-															"type": "text"
-														}
-													]
-												},
-												"url": {
-													"raw": "{{base_url}}lesson/create",
-													"host": [
-														"{{base_url}}lesson"
-													],
-													"path": [
-														"create"
-													]
-												}
-											},
-											"status": "OK",
-											"code": 200,
-											"_postman_previewlanguage": "json",
-											"header": [
-												{
-													"key": "Date",
-													"value": "Wed, 25 Jan 2023 10:23:43 GMT"
-												},
-												{
-													"key": "Server",
-													"value": "Apache"
-												},
-												{
-													"key": "X-Powered-By",
-													"value": "PHP/7.4.33"
-												},
-												{
-													"key": "Cache-control",
-													"value": "no-store, max-age=0, no-cache"
-												},
-												{
-													"key": "Strict-Transport-Security",
-													"value": "max-age=63072000; includeSubDomains"
-												},
-												{
-													"key": "X-Frame-Options",
-													"value": "SAMEORIGIN"
-												},
-												{
-													"key": "X-Content-Type-Options",
-													"value": "nosniff"
-												},
-												{
-													"key": "Upgrade",
-													"value": "h2,h2c"
-												},
-												{
-													"key": "Connection",
-													"value": "Upgrade, Keep-Alive"
-												},
-												{
-													"key": "Vary",
-													"value": "Accept-Encoding"
-												},
-												{
-													"key": "Content-Encoding",
-													"value": "gzip"
-												},
-												{
-													"key": "Content-Length",
-													"value": "111"
-												},
-												{
-													"key": "Keep-Alive",
-													"value": "timeout=3, max=500"
-												},
-												{
-													"key": "Content-Type",
-													"value": "application/json; charset=UTF-8"
-												}
-											],
-											"cookie": [],
-											"body": "{\n    \"success\": true,\n    \"message\": \"LESSON_CREATED_SUCCESSFULLY\",\n    \"payload\": {\n        \"guid\": \"LP20233\"\n    }\n}"
-										}
-									]
-								},
-								{
-									"name": "Update lesson",
-									"id": "821526d0-2f8e-437b-adac-123603c292c9",
-									"protocolProfileBehavior": {
-										"disableBodyPruning": true
-									},
-									"request": {
-										"method": "POST",
-										"header": [],
-										"body": {
-											"mode": "formdata",
-											"formdata": [
-												{
-													"key": "title",
-													"value": "HTML Introduction",
-													"description": "Required. Alpha numeric and some special chars allowed",
-													"type": "text"
-												},
-												{
-													"key": "description",
-													"value": "HTML is the standard markup language for Web pages.\n\nWith HTML you can create your own Website.\n\nHTML is easy to learn - You will enjoy it!",
-													"description": "Optional. String allowed",
-													"type": "text"
-												},
-												{
-													"key": "status",
-													"value": "1",
-													"description": "Required. 0 (Unpublished), 1 (Published), 2 (Archive)",
-													"type": "text"
-												},
-												{
-													"key": "subject_guid",
-													"value": "ENG1",
-													"type": "text"
-												}
-											]
-										},
-										"url": {
-											"raw": "{{base_url}}lesson/update/HTM3",
-											"host": [
-												"{{base_url}}lesson"
-											],
-											"path": [
-												"update",
-												"HTM3"
-											]
-										}
-									},
-									"response": [
-										{
-											"id": "d16a8c2a-b528-42ec-aea9-26d6c1277ddd",
-											"name": "Success",
-											"originalRequest": {
-												"method": "POST",
-												"header": [],
-												"body": {
-													"mode": "formdata",
-													"formdata": [
-														{
-															"key": "title",
-															"value": "A new lesson",
-															"description": "Required. Alpha numeric and some special chars allowed",
-															"type": "text"
-														},
-														{
-															"key": "description",
-															"value": "",
-															"description": "Optional. String allowed",
-															"type": "text"
-														},
-														{
-															"key": "status",
-															"value": "0",
-															"description": "Required. 0 (Unpublished), 1 (Published), 2 (Archive)",
-															"type": "text"
-														},
-														{
-															"key": "created_by",
-															"value": "CA000019",
-															"description": "User GUID",
-															"type": "text"
-														}
-													]
-												},
-												"url": {
-													"raw": "{{base_url}}lesson/create",
-													"host": [
-														"{{base_url}}lesson"
-													],
-													"path": [
-														"create"
-													]
-												}
-											},
-											"status": "OK",
-											"code": 200,
-											"_postman_previewlanguage": "json",
-											"header": [
-												{
-													"key": "Date",
-													"value": "Wed, 25 Jan 2023 10:23:43 GMT"
-												},
-												{
-													"key": "Server",
-													"value": "Apache"
-												},
-												{
-													"key": "X-Powered-By",
-													"value": "PHP/7.4.33"
-												},
-												{
-													"key": "Cache-control",
-													"value": "no-store, max-age=0, no-cache"
-												},
-												{
-													"key": "Strict-Transport-Security",
-													"value": "max-age=63072000; includeSubDomains"
-												},
-												{
-													"key": "X-Frame-Options",
-													"value": "SAMEORIGIN"
-												},
-												{
-													"key": "X-Content-Type-Options",
-													"value": "nosniff"
-												},
-												{
-													"key": "Upgrade",
-													"value": "h2,h2c"
-												},
-												{
-													"key": "Connection",
-													"value": "Upgrade, Keep-Alive"
-												},
-												{
-													"key": "Vary",
-													"value": "Accept-Encoding"
-												},
-												{
-													"key": "Content-Encoding",
-													"value": "gzip"
-												},
-												{
-													"key": "Content-Length",
-													"value": "111"
-												},
-												{
-													"key": "Keep-Alive",
-													"value": "timeout=3, max=500"
-												},
-												{
-													"key": "Content-Type",
-													"value": "application/json; charset=UTF-8"
-												}
-											],
-											"cookie": [],
-											"body": "{\n    \"success\": true,\n    \"message\": \"LESSON_CREATED_SUCCESSFULLY\",\n    \"payload\": {\n        \"guid\": \"LP20233\"\n    }\n}"
-										}
-									]
-								},
-								{
-									"name": "View lesson",
-									"id": "003d523e-1c78-471f-aafc-42dce91b49ef",
-									"protocolProfileBehavior": {
-										"disableBodyPruning": true
-									},
-									"request": {
-										"method": "GET",
-										"header": [],
-										"url": {
-											"raw": "{{base_url}}lesson/view/BAS1",
-											"host": [
-												"{{base_url}}lesson"
-											],
-											"path": [
-												"view",
-												"BAS1"
-											]
-										}
-									},
-									"response": [
-										{
-											"id": "4877f256-a0ae-494d-8b68-3eb98fa15388",
-											"name": "Success",
-											"originalRequest": {
-												"method": "GET",
-												"header": [],
-												"url": {
-													"raw": "{{base_url}}lesson/view/LP2",
-													"host": [
-														"{{base_url}}lesson"
-													],
-													"path": [
-														"view",
-														"LP2"
-													]
-												}
-											},
-											"status": "OK",
-											"code": 200,
-											"_postman_previewlanguage": "json",
-											"header": [
-												{
-													"key": "Date",
-													"value": "Fri, 27 Jan 2023 10:07:11 GMT"
-												},
-												{
-													"key": "Server",
-													"value": "Apache"
-												},
-												{
-													"key": "X-Powered-By",
-													"value": "PHP/7.4.33"
-												},
-												{
-													"key": "Cache-control",
-													"value": "no-store, max-age=0, no-cache"
-												},
-												{
-													"key": "Strict-Transport-Security",
-													"value": "max-age=63072000; includeSubDomains"
-												},
-												{
-													"key": "X-Frame-Options",
-													"value": "SAMEORIGIN"
-												},
-												{
-													"key": "X-Content-Type-Options",
-													"value": "nosniff"
-												},
-												{
-													"key": "Upgrade",
-													"value": "h2,h2c"
-												},
-												{
-													"key": "Connection",
-													"value": "Upgrade, Keep-Alive"
-												},
-												{
-													"key": "Vary",
-													"value": "Accept-Encoding"
-												},
-												{
-													"key": "Content-Encoding",
-													"value": "gzip"
-												},
-												{
-													"key": "Content-Length",
-													"value": "196"
-												},
-												{
-													"key": "Keep-Alive",
-													"value": "timeout=3, max=500"
-												},
-												{
-													"key": "Content-Type",
-													"value": "application/json; charset=UTF-8"
-												}
-											],
-											"cookie": [],
-											"body": "{\n    \"success\": true,\n    \"message\": \"LESSON_FOUND\",\n    \"payload\": {\n        \"lesson_id\": \"2\",\n        \"guid\": \"LP2\",\n        \"title\": \"A new lesson\",\n        \"description\": \"\",\n        \"status\": \"0\",\n        \"created_by\": \"CA000019\",\n        \"created_on\": \"2023-01-25 04:23:12\",\n        \"updated_by\": \"CA000019\",\n        \"updated_on\": \"2023-01-25 04:23:12\"\n    }\n}"
-										}
-									]
-								},
-								{
-									"name": "Delete lesson",
-									"id": "39ede9e4-8163-4eba-8729-6db06ead281c",
-									"protocolProfileBehavior": {
-										"disableBodyPruning": true
-									},
-									"request": {
-										"method": "DELETE",
-										"header": [],
-										"url": {
-											"raw": "{{base_url}}lesson/delete/HTM3",
-											"host": [
-												"{{base_url}}lesson"
-											],
-											"path": [
-												"delete",
-												"HTM3"
-											]
-										}
-									},
-									"response": []
-								},
-								{
-									"name": "Set lesson status",
-									"id": "c1be3f2f-747f-4d7b-94f7-5e58d7cae0ef",
-									"protocolProfileBehavior": {
-										"disableBodyPruning": true
-									},
-									"request": {
-										"method": "POST",
-										"header": [],
-										"body": {
-											"mode": "formdata",
-											"formdata": [
-												{
-													"key": "status",
-													"value": "0",
-													"type": "text",
-													"description": "Required. 0 (Unpublished), 1 (Published), 2 (Archive)"
-												}
-											]
-										},
-										"url": {
-											"raw": "{{base_url}}lesson/status/HTM4",
-											"host": [
-												"{{base_url}}lesson"
-											],
-											"path": [
-												"status",
-												"HTM4"
-											]
-										}
-									},
-									"response": []
-								},
-								{
-									"name": "Preview lesson",
-									"id": "c0ae29f7-9d2b-41dc-8172-70bdda64b258",
-									"protocolProfileBehavior": {
-										"disableBodyPruning": true
-									},
-									"request": {
-										"method": "GET",
-										"header": [],
-										"url": {
-											"raw": "{{base_url}}lesson/preview/HTM4",
-											"host": [
-												"{{base_url}}lesson"
-											],
-											"path": [
-												"preview",
-												"HTM4"
-											]
-										}
-									},
-									"response": [
-										{
-											"id": "15144a52-2413-4352-9d76-667a820898b2",
-											"name": "Success",
-											"originalRequest": {
-												"method": "GET",
-												"header": [],
-												"url": {
-													"raw": "{{base_url}}lesson/view/LP2",
-													"host": [
-														"{{base_url}}lesson"
-													],
-													"path": [
-														"view",
-														"LP2"
-													]
-												}
-											},
-											"status": "OK",
-											"code": 200,
-											"_postman_previewlanguage": "json",
-											"header": [
-												{
-													"key": "Date",
-													"value": "Fri, 27 Jan 2023 10:07:11 GMT"
-												},
-												{
-													"key": "Server",
-													"value": "Apache"
-												},
-												{
-													"key": "X-Powered-By",
-													"value": "PHP/7.4.33"
-												},
-												{
-													"key": "Cache-control",
-													"value": "no-store, max-age=0, no-cache"
-												},
-												{
-													"key": "Strict-Transport-Security",
-													"value": "max-age=63072000; includeSubDomains"
-												},
-												{
-													"key": "X-Frame-Options",
-													"value": "SAMEORIGIN"
-												},
-												{
-													"key": "X-Content-Type-Options",
-													"value": "nosniff"
-												},
-												{
-													"key": "Upgrade",
-													"value": "h2,h2c"
-												},
-												{
-													"key": "Connection",
-													"value": "Upgrade, Keep-Alive"
-												},
-												{
-													"key": "Vary",
-													"value": "Accept-Encoding"
-												},
-												{
-													"key": "Content-Encoding",
-													"value": "gzip"
-												},
-												{
-													"key": "Content-Length",
-													"value": "196"
-												},
-												{
-													"key": "Keep-Alive",
-													"value": "timeout=3, max=500"
-												},
-												{
-													"key": "Content-Type",
-													"value": "application/json; charset=UTF-8"
-												}
-											],
-											"cookie": [],
-											"body": "{\n    \"success\": true,\n    \"message\": \"LESSON_FOUND\",\n    \"payload\": {\n        \"lesson_id\": \"2\",\n        \"guid\": \"LP2\",\n        \"title\": \"A new lesson\",\n        \"description\": \"\",\n        \"status\": \"0\",\n        \"created_by\": \"CA000019\",\n        \"created_on\": \"2023-01-25 04:23:12\",\n        \"updated_by\": \"CA000019\",\n        \"updated_on\": \"2023-01-25 04:23:12\"\n    }\n}"
-										}
-									]
-								},
-								{
-									"name": "Get lesson sections",
-									"id": "bfddc099-42c3-4fa2-8564-115dda9925b9",
-									"protocolProfileBehavior": {
-										"disableBodyPruning": true
-									},
-									"request": {
-										"method": "GET",
-										"header": [],
-										"body": {
-											"mode": "formdata",
-											"formdata": []
-										},
-										"url": {
-											"raw": "{{base_url}}lesson/sections/HTM5",
-											"host": [
-												"{{base_url}}lesson"
-											],
-											"path": [
-												"sections",
-												"HTM5"
-											]
-										}
-									},
-									"response": []
-								}
-							],
-							"id": "8a445070-3411-493a-bdbd-1b7096642c3b"
-						},
-						{
 							"name": "Create subject",
-							"id": "4b7c3688-bd49-4519-be05-4691432b416a",
+							"id": "fd55a8d9-9e92-4983-a260-b5e8c3ff1c1d",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
 							},
@@ -3249,7 +1904,7 @@
 									"formdata": [
 										{
 											"key": "title",
-											"value": "PHP OOP",
+											"value": "PHP Operators",
 											"type": "text"
 										},
 										{
@@ -3276,7 +1931,7 @@
 						},
 						{
 							"name": "Edit subject",
-							"id": "9652938a-ed36-423a-8a17-8fa812db9864",
+							"id": "cf21a2fc-347b-47c6-ac0d-6b7833999035",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
 							},
@@ -3288,20 +1943,19 @@
 									"formdata": [
 										{
 											"key": "title",
-											"value": "English2",
+											"value": "PHP Operators3",
 											"type": "text"
 										}
 									]
 								},
 								"url": {
-									"raw": "{{base_url}}course/PHP6/subject/ENG1/edit",
+									"raw": "{{base_url}}course/subject/PHP24/edit",
 									"host": [
 										"{{base_url}}course"
 									],
 									"path": [
-										"PHP6",
 										"subject",
-										"ENG1",
+										"PHP24",
 										"edit"
 									]
 								}
@@ -3309,8 +1963,8 @@
 							"response": []
 						},
 						{
-							"name": "List all subjects Copy",
-							"id": "deb87a99-07b0-45b6-aed7-c4e0f26fa8f9",
+							"name": "List all subjects in a course",
+							"id": "2a0715d5-36dc-4fe4-84c3-fa962b6de7f9",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
 							},
@@ -3318,12 +1972,12 @@
 								"method": "POST",
 								"header": [],
 								"url": {
-									"raw": "{{base_url}}course/LEV1/subject/list",
+									"raw": "{{base_url}}course/PHP6/subject/list",
 									"host": [
 										"{{base_url}}course"
 									],
 									"path": [
-										"LEV1",
+										"PHP6",
 										"subject",
 										"list"
 									]
@@ -3333,7 +1987,615 @@
 						},
 						{
 							"name": "Publish/Unpublish subject Copy",
-							"id": "522740ac-2cc0-4038-b6e6-068afcac8b6b",
+							"id": "2fcce5c0-9db7-44b0-a1f3-204537bcc350",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "status",
+											"value": "1",
+											"description": "0=Unpublished, 1=Publish",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{base_url}}course/subject/PHP24/change_status",
+									"host": [
+										"{{base_url}}course"
+									],
+									"path": [
+										"subject",
+										"PHP24",
+										"change_status"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete subject",
+							"id": "768336a3-835a-476e-855b-b845de826f9f",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}course/subject/PHP23/delete",
+									"host": [
+										"{{base_url}}course"
+									],
+									"path": [
+										"subject",
+										"PHP23",
+										"delete"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get subject details",
+							"id": "18fca0d0-f1f2-4397-8871-68b5c597a909",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}course/subject/PHP24/view",
+									"host": [
+										"{{base_url}}course"
+									],
+									"path": [
+										"subject",
+										"PHP24",
+										"view"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Preview subject",
+							"id": "3f158cb6-b6b7-4b1e-959f-39a69a150a32",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}course/subject/PHP24/preview",
+									"host": [
+										"{{base_url}}course"
+									],
+									"path": [
+										"subject",
+										"PHP24",
+										"preview"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"id": "16e320d8-963c-4238-899a-33b800339784"
+				},
+				{
+					"name": "Lessons",
+					"item": [
+						{
+							"name": "Search and filter lessons in a subject",
+							"id": "f82c7f0c-c372-4bf6-8c88-6d722489b4e1",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "status",
+											"value": "",
+											"type": "text",
+											"description": "Optional. The status field must be one of: 0,1,2."
+										},
+										{
+											"key": "search",
+											"value": "",
+											"type": "text",
+											"description": "Optional. Any string value"
+										},
+										{
+											"key": "results_per_page",
+											"value": "",
+											"type": "text",
+											"description": "Optional. The results_per_page field must only contain digits and must be greater than zero."
+										},
+										{
+											"key": "page",
+											"value": "",
+											"type": "text",
+											"description": "Optional. The page field must only contain digits and must be greater than zero."
+										},
+										{
+											"key": "order_by",
+											"value": "",
+											"type": "text",
+											"description": "Optional. If present, this field must be one of: [title_asc, title_desc, newest_first, newest_last]"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{base_url}}course/subject/PHP24/lessons",
+									"host": [
+										"{{base_url}}course"
+									],
+									"path": [
+										"subject",
+										"PHP24",
+										"lessons"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create lesson",
+							"id": "512dba62-9a97-4e47-8294-af6748e609fd",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "title",
+											"value": "PHP Introduction",
+											"description": "Required. Alpha numeric and some special chars allowed",
+											"type": "text"
+										},
+										{
+											"key": "description",
+											"value": "An HTML element is defined by a start tag, some content, and an end tag.\n",
+											"description": "Optional. String allowed",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "subject_guid",
+											"value": "ENG1",
+											"description": "Optional. Subject guid",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{base_url}}lesson/create",
+									"host": [
+										"{{base_url}}lesson"
+									],
+									"path": [
+										"create"
+									]
+								}
+							},
+							"response": [
+								{
+									"id": "ff14903f-df91-494f-8a4d-744e38f6e8f8",
+									"name": "Success",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "title",
+													"value": "A new lesson",
+													"description": "Required. Alpha numeric and some special chars allowed",
+													"type": "text"
+												},
+												{
+													"key": "description",
+													"value": "",
+													"description": "Optional. String allowed",
+													"type": "text"
+												},
+												{
+													"key": "status",
+													"value": "0",
+													"description": "Required. 0 (Unpublished), 1 (Published), 2 (Archive)",
+													"type": "text"
+												},
+												{
+													"key": "created_by",
+													"value": "CA000019",
+													"description": "User GUID",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{base_url}}lesson/create",
+											"host": [
+												"{{base_url}}lesson"
+											],
+											"path": [
+												"create"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Date",
+											"value": "Wed, 25 Jan 2023 10:23:43 GMT"
+										},
+										{
+											"key": "Server",
+											"value": "Apache"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/7.4.33"
+										},
+										{
+											"key": "Cache-control",
+											"value": "no-store, max-age=0, no-cache"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=63072000; includeSubDomains"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "SAMEORIGIN"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "Upgrade",
+											"value": "h2,h2c"
+										},
+										{
+											"key": "Connection",
+											"value": "Upgrade, Keep-Alive"
+										},
+										{
+											"key": "Vary",
+											"value": "Accept-Encoding"
+										},
+										{
+											"key": "Content-Encoding",
+											"value": "gzip"
+										},
+										{
+											"key": "Content-Length",
+											"value": "111"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=3, max=500"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=UTF-8"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"success\": true,\n    \"message\": \"LESSON_CREATED_SUCCESSFULLY\",\n    \"payload\": {\n        \"guid\": \"LP20233\"\n    }\n}"
+								}
+							]
+						},
+						{
+							"name": "Update lesson",
+							"id": "3be1a448-d1ea-426a-9d31-8c4e21d7adb0",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "title",
+											"value": "HTML Introduction",
+											"description": "Required. Alpha numeric and some special chars allowed",
+											"type": "text"
+										},
+										{
+											"key": "description",
+											"value": "HTML is the standard markup language for Web pages.\n\nWith HTML you can create your own Website.\n\nHTML is easy to learn - You will enjoy it!",
+											"description": "Optional. String allowed",
+											"type": "text"
+										},
+										{
+											"key": "status",
+											"value": "1",
+											"description": "Required. 0 (Unpublished), 1 (Published), 2 (Archive)",
+											"type": "text"
+										},
+										{
+											"key": "subject_guid",
+											"value": "ENG1",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{base_url}}lesson/update/HTM3",
+									"host": [
+										"{{base_url}}lesson"
+									],
+									"path": [
+										"update",
+										"HTM3"
+									]
+								}
+							},
+							"response": [
+								{
+									"id": "0b0acdbc-47be-4299-ac12-676f6604caf2",
+									"name": "Success",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "title",
+													"value": "A new lesson",
+													"description": "Required. Alpha numeric and some special chars allowed",
+													"type": "text"
+												},
+												{
+													"key": "description",
+													"value": "",
+													"description": "Optional. String allowed",
+													"type": "text"
+												},
+												{
+													"key": "status",
+													"value": "0",
+													"description": "Required. 0 (Unpublished), 1 (Published), 2 (Archive)",
+													"type": "text"
+												},
+												{
+													"key": "created_by",
+													"value": "CA000019",
+													"description": "User GUID",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{base_url}}lesson/create",
+											"host": [
+												"{{base_url}}lesson"
+											],
+											"path": [
+												"create"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Date",
+											"value": "Wed, 25 Jan 2023 10:23:43 GMT"
+										},
+										{
+											"key": "Server",
+											"value": "Apache"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/7.4.33"
+										},
+										{
+											"key": "Cache-control",
+											"value": "no-store, max-age=0, no-cache"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=63072000; includeSubDomains"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "SAMEORIGIN"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "Upgrade",
+											"value": "h2,h2c"
+										},
+										{
+											"key": "Connection",
+											"value": "Upgrade, Keep-Alive"
+										},
+										{
+											"key": "Vary",
+											"value": "Accept-Encoding"
+										},
+										{
+											"key": "Content-Encoding",
+											"value": "gzip"
+										},
+										{
+											"key": "Content-Length",
+											"value": "111"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=3, max=500"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=UTF-8"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"success\": true,\n    \"message\": \"LESSON_CREATED_SUCCESSFULLY\",\n    \"payload\": {\n        \"guid\": \"LP20233\"\n    }\n}"
+								}
+							]
+						},
+						{
+							"name": "View lesson",
+							"id": "e5778053-e90d-4656-9033-ffef2cff7c78",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}lesson/view/BAS1",
+									"host": [
+										"{{base_url}}lesson"
+									],
+									"path": [
+										"view",
+										"BAS1"
+									]
+								}
+							},
+							"response": [
+								{
+									"id": "d74d27ad-a8cc-4a0e-9713-580e00763c8a",
+									"name": "Success",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{base_url}}lesson/view/LP2",
+											"host": [
+												"{{base_url}}lesson"
+											],
+											"path": [
+												"view",
+												"LP2"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Date",
+											"value": "Fri, 27 Jan 2023 10:07:11 GMT"
+										},
+										{
+											"key": "Server",
+											"value": "Apache"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/7.4.33"
+										},
+										{
+											"key": "Cache-control",
+											"value": "no-store, max-age=0, no-cache"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=63072000; includeSubDomains"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "SAMEORIGIN"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "Upgrade",
+											"value": "h2,h2c"
+										},
+										{
+											"key": "Connection",
+											"value": "Upgrade, Keep-Alive"
+										},
+										{
+											"key": "Vary",
+											"value": "Accept-Encoding"
+										},
+										{
+											"key": "Content-Encoding",
+											"value": "gzip"
+										},
+										{
+											"key": "Content-Length",
+											"value": "196"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=3, max=500"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=UTF-8"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"success\": true,\n    \"message\": \"LESSON_FOUND\",\n    \"payload\": {\n        \"lesson_id\": \"2\",\n        \"guid\": \"LP2\",\n        \"title\": \"A new lesson\",\n        \"description\": \"\",\n        \"status\": \"0\",\n        \"created_by\": \"CA000019\",\n        \"created_on\": \"2023-01-25 04:23:12\",\n        \"updated_by\": \"CA000019\",\n        \"updated_on\": \"2023-01-25 04:23:12\"\n    }\n}"
+								}
+							]
+						},
+						{
+							"name": "Delete lesson",
+							"id": "56861a27-7e3a-4804-b1d3-eb1666a47415",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}lesson/delete/HTM3",
+									"host": [
+										"{{base_url}}lesson"
+									],
+									"path": [
+										"delete",
+										"HTM3"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Set lesson status",
+							"id": "daa7a85a-9dc5-4d31-8e98-312551378194",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
 							},
@@ -3346,100 +2608,725 @@
 										{
 											"key": "status",
 											"value": "0",
-											"description": "0=Unpublished, 1=Publish",
-											"type": "text"
+											"type": "text",
+											"description": "Required. 0 (Unpublished), 1 (Published), 2 (Archive)"
 										}
 									]
 								},
 								"url": {
-									"raw": "{{base_url}}course/LEV1/subject/ENG1/change_status",
+									"raw": "{{base_url}}lesson/status/HTM4",
 									"host": [
-										"{{base_url}}course"
+										"{{base_url}}lesson"
 									],
 									"path": [
-										"LEV1",
-										"subject",
-										"ENG1",
-										"change_status"
+										"status",
+										"HTM4"
 									]
 								}
 							},
 							"response": []
 						},
 						{
-							"name": "Delete subject Copy",
-							"id": "de02ffa1-e02c-42ff-85bb-ac53bdc7c5f0",
+							"name": "Preview lesson",
+							"id": "aee7c2e7-2d32-4239-a251-416e25270bfa",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
 							},
 							"request": {
-								"method": "DELETE",
+								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{base_url}}course/LEV1/subject/ENG3/delete",
+									"raw": "{{base_url}}lesson/preview/HTM4",
 									"host": [
-										"{{base_url}}course"
+										"{{base_url}}lesson"
 									],
 									"path": [
-										"LEV1",
-										"subject",
-										"ENG3",
-										"delete"
+										"preview",
+										"HTM4"
 									]
 								}
 							},
-							"response": []
-						},
-						{
-							"name": "Get subject details",
-							"id": "725ce759-452d-4e21-9888-10f50e07a3e6",
-							"protocolProfileBehavior": {
-								"disableBodyPruning": true
-							},
-							"request": {
-								"method": "POST",
-								"header": [],
-								"url": {
-									"raw": "{{base_url}}course/LEV1/subject/ENG1/view",
-									"host": [
-										"{{base_url}}course"
+							"response": [
+								{
+									"id": "40d66da3-81c0-4f7f-9b3b-f6c5b9e10ca7",
+									"name": "Success",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{base_url}}lesson/view/LP2",
+											"host": [
+												"{{base_url}}lesson"
+											],
+											"path": [
+												"view",
+												"LP2"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Date",
+											"value": "Fri, 27 Jan 2023 10:07:11 GMT"
+										},
+										{
+											"key": "Server",
+											"value": "Apache"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/7.4.33"
+										},
+										{
+											"key": "Cache-control",
+											"value": "no-store, max-age=0, no-cache"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=63072000; includeSubDomains"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "SAMEORIGIN"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "Upgrade",
+											"value": "h2,h2c"
+										},
+										{
+											"key": "Connection",
+											"value": "Upgrade, Keep-Alive"
+										},
+										{
+											"key": "Vary",
+											"value": "Accept-Encoding"
+										},
+										{
+											"key": "Content-Encoding",
+											"value": "gzip"
+										},
+										{
+											"key": "Content-Length",
+											"value": "196"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=3, max=500"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=UTF-8"
+										}
 									],
-									"path": [
-										"LEV1",
-										"subject",
-										"ENG1",
-										"view"
-									]
+									"cookie": [],
+									"body": "{\n    \"success\": true,\n    \"message\": \"LESSON_FOUND\",\n    \"payload\": {\n        \"lesson_id\": \"2\",\n        \"guid\": \"LP2\",\n        \"title\": \"A new lesson\",\n        \"description\": \"\",\n        \"status\": \"0\",\n        \"created_by\": \"CA000019\",\n        \"created_on\": \"2023-01-25 04:23:12\",\n        \"updated_by\": \"CA000019\",\n        \"updated_on\": \"2023-01-25 04:23:12\"\n    }\n}"
 								}
-							},
-							"response": []
+							]
 						},
 						{
-							"name": "Preview subject",
-							"id": "fe75976d-e0c2-47c5-a774-6c7006458e53",
+							"name": "Get lesson sections",
+							"id": "022055b9-d728-4be9-8d13-ed15d462c801",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
 							},
 							"request": {
-								"method": "POST",
+								"method": "GET",
 								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
 								"url": {
-									"raw": "{{base_url}}course/LEV1/subject/ENG1/preview",
+									"raw": "{{base_url}}lesson/sections/HTM5",
 									"host": [
-										"{{base_url}}course"
+										"{{base_url}}lesson"
 									],
 									"path": [
-										"LEV1",
-										"subject",
-										"ENG1",
-										"preview"
+										"sections",
+										"HTM5"
 									]
 								}
 							},
 							"response": []
 						}
 					],
-					"id": "ed09526b-4134-4ab5-a795-bbebd47106f5"
+					"id": "29d573cd-d526-4843-bde2-e1e30e93cac9"
+				},
+				{
+					"name": "Sections",
+					"item": [
+						{
+							"name": "Content",
+							"item": [
+								{
+									"name": "Create content",
+									"id": "5e154928-eb5d-4ad7-a07e-143b76a502d2",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "type",
+													"value": "html",
+													"description": "Required. Will provide the type of content being added. Accepted values are [html, file, link]. Default value is html",
+													"type": "text"
+												},
+												{
+													"key": "content",
+													"value": "HTML Elements4\nThe HTML element is everything from the start tag to the end tag:\n\n<tagname>Content goes here...</tagname>\nExamples of some HTML elements:\n\n<h1>My First Heading</h1>\n<p>My first paragraph.</p>\nStart tag\tElement content\tEnd tag\n<h1>\tMy First Heading\t</h1>\n<p>\tMy first paragraph.\t</p>\n<br>\tnone\tnone",
+													"description": "Required. Actual content. Content can be html, full path for audio/video/pdf/other files or links for youtube videos",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{base_url}}section/PHP4/content/create",
+											"host": [
+												"{{base_url}}section"
+											],
+											"path": [
+												"PHP4",
+												"content",
+												"create"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Edit content",
+									"id": "4c291667-59d2-47c9-af88-40f50680feb4",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "type",
+													"value": "html",
+													"description": "Required. Will provide the type of content being added. Accepted values are [html, file, link]. Default value is html",
+													"type": "text"
+												},
+												{
+													"key": "content",
+													"value": "HTML Elements2\nThe HTML element is everything from the start tag to the end tag:\n\n<tagname>Content goes here...</tagname>\nExamples of some HTML elements:\n\n<h1>My First Heading</h1>\n<p>My first paragraph.</p>\nStart tag\tElement content\tEnd tag\n<h1>\tMy First Heading\t</h1>\n<p>\tMy first paragraph.\t</p>\n<br>\tnone\tnone\n",
+													"description": "Required. Actual content. Content can be html, full path for audio/video/pdf/other files or links for youtube videos",
+													"type": "text"
+												},
+												{
+													"key": "status",
+													"value": "1",
+													"description": "Optional. Values [0=Unpublished, 1=Published, 2=Archive]",
+													"type": "text"
+												},
+												{
+													"key": "created_by",
+													"value": "CA000013",
+													"description": "Required. ",
+													"type": "text"
+												},
+												{
+													"key": "content_guid",
+													"value": "CRD73",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{base_url}}lesson/content/edit/3",
+											"host": [
+												"{{base_url}}lesson"
+											],
+											"path": [
+												"content",
+												"edit",
+												"3"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "View content",
+									"id": "371b223d-f319-44e1-a956-4c99e8fcfb9d",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{base_url}}lesson/content/view/74",
+											"host": [
+												"{{base_url}}lesson"
+											],
+											"path": [
+												"content",
+												"view",
+												"74"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Set content status",
+									"id": "f3116be3-750b-469d-9dd0-d021e163148c",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "status",
+													"value": "2",
+													"type": "text",
+													"description": "Required. 0 (Unpublished), 1 (Published), 2 (Archive)"
+												},
+												{
+													"key": "updated_by",
+													"value": "CS00001",
+													"type": "text",
+													"description": "User GUID"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{base_url}}lesson/content/status/74",
+											"host": [
+												"{{base_url}}lesson"
+											],
+											"path": [
+												"content",
+												"status",
+												"74"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Arrange content",
+									"id": "41c2838a-8ef8-4a39-bb6b-c17ec578d63f",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "content[72]",
+													"value": "1",
+													"type": "text"
+												},
+												{
+													"key": "content[73]",
+													"value": "2",
+													"type": "text"
+												},
+												{
+													"key": "content[74]",
+													"value": "3",
+													"type": "text"
+												},
+												{
+													"key": "content[75]",
+													"value": "4",
+													"type": "text"
+												},
+												{
+													"key": "content[76]",
+													"value": "5",
+													"type": "text"
+												},
+												{
+													"key": "content[77]",
+													"value": "6",
+													"type": "text"
+												},
+												{
+													"key": "content[78]",
+													"value": "7",
+													"type": "text"
+												},
+												{
+													"key": "content[79]",
+													"value": "8",
+													"type": "text"
+												},
+												{
+													"key": "updated_by",
+													"value": "CA00001",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{base_url}}lesson/content/arrange/3",
+											"host": [
+												"{{base_url}}lesson"
+											],
+											"path": [
+												"content",
+												"arrange",
+												"3"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Delete content",
+									"id": "86e7966c-ac94-424c-b4e0-88e9c35cbb1e",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{base_url}}lesson/content/delete/66",
+											"host": [
+												"{{base_url}}lesson"
+											],
+											"path": [
+												"content",
+												"delete",
+												"66"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Upload files",
+									"id": "113ea524-36ac-4b99-a178-db82d65a9837",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "userfile",
+													"type": "file",
+													"description": "Required",
+													"src": "/C:/Users/d_asi/Downloads/GTmetrix-report-mv-sanity.netlify.app-20230306T005216-v2djnAGE.pdf"
+												},
+												{
+													"key": "created_by",
+													"value": "CA00001",
+													"description": "Required",
+													"type": "text"
+												},
+												{
+													"key": "section_id",
+													"value": "3",
+													"description": "Required",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{base_url}}lesson/content/upload/3",
+											"host": [
+												"{{base_url}}lesson"
+											],
+											"path": [
+												"content",
+												"upload",
+												"3"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Replace file",
+									"id": "94ce661e-209d-44ce-b13d-c17b5a6cdfa0",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "file_hash",
+													"value": "1678366722_dbaec60ccd6b39e88ea7.pdf",
+													"description": "Required",
+													"type": "text"
+												},
+												{
+													"key": "section_id",
+													"value": "3",
+													"type": "text"
+												},
+												{
+													"key": "userfile",
+													"description": "Required",
+													"type": "file",
+													"src": "/C:/Users/d_asi/Downloads/invoice.pdf"
+												},
+												{
+													"key": "created_by",
+													"value": "CA00001",
+													"description": "Required",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{base_url}}lesson/content/replace_file/3",
+											"host": [
+												"{{base_url}}lesson"
+											],
+											"path": [
+												"content",
+												"replace_file",
+												"3"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Get file",
+									"id": "3b3791b5-0710-4b31-b460-94419c329466",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{base_url}}lesson/content/get_file?file_hash=1678367040_f870f5191fd4c2e393ac.pdf",
+											"host": [
+												"{{base_url}}lesson"
+											],
+											"path": [
+												"content",
+												"get_file"
+											],
+											"query": [
+												{
+													"key": "file_hash",
+													"value": "1678367040_f870f5191fd4c2e393ac.pdf"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Delete file",
+									"id": "ca60dd64-601b-4616-90c4-e1913d2c115c",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{base_url}}lesson/content/delete_file/1677273308_ac302c61355598e0f67f.png",
+											"host": [
+												"{{base_url}}lesson"
+											],
+											"path": [
+												"content",
+												"delete_file",
+												"1677273308_ac302c61355598e0f67f.png"
+											]
+										}
+									},
+									"response": []
+								}
+							],
+							"id": "16d2b765-9cc6-432d-bb86-8db221502c9f"
+						},
+						{
+							"name": "Add section",
+							"id": "a74bcc1b-e0df-4ec5-8785-f0c334f534dc",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "title",
+											"value": "PHP Introduction ",
+											"description": "Required. Will provide the type of content being added. Accepted values are [html, file, link]. Default value is html",
+											"type": "text"
+										},
+										{
+											"key": "block[0][type]",
+											"value": "html",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "block[0][content]",
+											"value": "html asasg asjhass",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "block[1][type]",
+											"value": "file",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "block[1][content]",
+											"type": "file",
+											"value": null,
+											"disabled": true
+										},
+										{
+											"key": "block[2][type]",
+											"value": "link",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "block[2][content]",
+											"value": "https://www.youtube.com",
+											"type": "text",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "{{base_url}}lesson/PHP9/section/create",
+									"host": [
+										"{{base_url}}lesson"
+									],
+									"path": [
+										"PHP9",
+										"section",
+										"create"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Edit section",
+							"id": "18a0e91a-0787-4ef4-96bc-cc7cb883dd4e",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "title",
+											"value": "HTML INTRO3",
+											"description": "Required. Will provide the type of content being added. Accepted values are [html, file, link]. Default value is html",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{base_url}}lesson/edit_section/HTM8/HTM3",
+									"host": [
+										"{{base_url}}lesson"
+									],
+									"path": [
+										"edit_section",
+										"HTM8",
+										"HTM3"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "View section",
+							"id": "a3b08f20-d280-4172-92a7-286a185bf93f",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": {
+									"raw": "{{base_url}}lesson/view_section/HTM3",
+									"host": [
+										"{{base_url}}lesson"
+									],
+									"path": [
+										"view_section",
+										"HTM3"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get section content",
+							"id": "8fe0c081-c849-4fe4-b026-51ff5840951b",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}lesson/content/list/3",
+									"host": [
+										"{{base_url}}lesson"
+									],
+									"path": [
+										"content",
+										"list",
+										"3"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"id": "f1e0ccc8-5650-4349-b531-d02aee6f4c0d"
 				},
 				{
 					"name": "Tests",
@@ -12711,9 +12598,9 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{base_url_dev}}settings/registration/common",
+									"raw": "{{base_url}}settings/registration/common",
 									"host": [
-										"{{base_url_dev}}settings"
+										"{{base_url}}settings"
 									],
 									"path": [
 										"registration",
@@ -12778,9 +12665,9 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{base_url_dev}}settings/registration/valid_fields",
+									"raw": "{{base_url}}settings/registration/valid_fields",
 									"host": [
-										"{{base_url_dev}}settings"
+										"{{base_url}}settings"
 									],
 									"path": [
 										"registration",
@@ -12883,15 +12770,15 @@
 										},
 										{
 											"key": "created_by",
-											"value": "{{admin_guid}}",
+											"value": "UR1",
 											"type": "text"
 										}
 									]
 								},
 								"url": {
-									"raw": "{{base_url_dev}}/settings/login/common",
+									"raw": "{{base_url}}/settings/login/common",
 									"host": [
-										"{{base_url_dev}}"
+										"{{base_url}}"
 									],
 									"path": [
 										"settings",
@@ -12927,9 +12814,9 @@
 									]
 								},
 								"url": {
-									"raw": "{{base_url_dev}}/settings/login/common",
+									"raw": "{{base_url}}/settings/login/common",
 									"host": [
-										"{{base_url_dev}}"
+										"{{base_url}}"
 									],
 									"path": [
 										"settings",
