@@ -1971,6 +1971,10 @@
 							"request": {
 								"method": "POST",
 								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
 								"url": {
 									"raw": "{{base_url}}course/PHP6/subjects",
 									"host": [
@@ -3473,13 +3477,13 @@
 								"method": "POST",
 								"header": [],
 								"url": {
-									"raw": "{{base_url}}course/section/PHP5/preview",
+									"raw": "{{base_url}}course/section/PHP6/preview",
 									"host": [
 										"{{base_url}}course"
 									],
 									"path": [
 										"section",
-										"PHP5",
+										"PHP6",
 										"preview"
 									]
 								}
@@ -3530,13 +3534,13 @@
 								"method": "DELETE",
 								"header": [],
 								"url": {
-									"raw": "{{base_url}}course/section/PHP5/delete",
+									"raw": "{{base_url}}course/section/PHP7/delete",
 									"host": [
 										"{{base_url}}course"
 									],
 									"path": [
 										"section",
-										"PHP5",
+										"PHP7",
 										"delete"
 									]
 								}
@@ -3564,25 +3568,85 @@
 										{
 											"key": "type",
 											"value": "html",
-											"description": "Required. Will provide the type of content being added. Accepted values are [html, file, link]. Default value is html",
-											"type": "text"
+											"description": "Required. Will provide the type of content being added. Accepted values are [html, image, video, pdf, file, youtube, link]. Default value is html",
+											"type": "text",
+											"disabled": true
 										},
 										{
 											"key": "content",
 											"value": "HTML Elements4\nThe HTML element is everything from the start tag to the end tag:\n\n<tagname>Content goes here...</tagname>\nExamples of some HTML elements:\n\n<h1>My First Heading</h1>\n<p>My first paragraph.</p>\nStart tag\tElement content\tEnd tag\n<h1>\tMy First Heading\t</h1>\n<p>\tMy first paragraph.\t</p>\n<br>\tnone\tnone",
 											"description": "Required. Actual content. Content can be html, full path for audio/video/pdf/other files or links for youtube videos",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "type",
+											"value": "image",
 											"type": "text"
+										},
+										{
+											"key": "userfile",
+											"type": "file",
+											"src": "/F:/Download/Project Files/Coaching App/QA6/paralelogram.jpg"
+										},
+										{
+											"key": "type",
+											"value": "pdf",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "userfile",
+											"type": "file",
+											"value": null,
+											"disabled": true
+										},
+										{
+											"key": "type",
+											"value": "video",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "userfile",
+											"type": "file",
+											"value": null,
+											"disabled": true
+										},
+										{
+											"key": "type",
+											"value": "youtube",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "content",
+											"value": "https://www.youtube.com/watch?v=eMIxuk0nOkU",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "type",
+											"value": "link",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "conent",
+											"value": "https://inovexiasoftware.com",
+											"type": "text",
+											"disabled": true
 										}
 									]
 								},
 								"url": {
-									"raw": "{{base_url}}course/section/PHP5/content/create",
+									"raw": "{{base_url}}course/section/PHP6/content/create",
 									"host": [
 										"{{base_url}}course"
 									],
 									"path": [
 										"section",
-										"PHP5",
+										"PHP6",
 										"content",
 										"create"
 									]
@@ -3591,7 +3655,7 @@
 							"response": []
 						},
 						{
-							"name": "Edit content",
+							"name": "Edit content/Replace file",
 							"id": "4c291667-59d2-47c9-af88-40f50680feb4",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
@@ -3603,68 +3667,45 @@
 									"mode": "formdata",
 									"formdata": [
 										{
-											"key": "type",
-											"value": "html",
-											"description": "Required. Will provide the type of content being added. Accepted values are [html, file, link]. Default value is html",
-											"type": "text"
-										},
-										{
 											"key": "content",
 											"value": "HTML Elements2\nThe HTML element is everything from the start tag to the end tag:\n\n<tagname>Content goes here...</tagname>\nExamples of some HTML elements:\n\n<h1>My First Heading</h1>\n<p>My first paragraph.</p>\nStart tag\tElement content\tEnd tag\n<h1>\tMy First Heading\t</h1>\n<p>\tMy first paragraph.\t</p>\n<br>\tnone\tnone\n",
 											"description": "Required. Actual content. Content can be html, full path for audio/video/pdf/other files or links for youtube videos",
-											"type": "text"
-										},
-										{
-											"key": "status",
-											"value": "1",
-											"description": "Optional. Values [0=Unpublished, 1=Published, 2=Archive]",
-											"type": "text"
-										},
-										{
-											"key": "created_by",
-											"value": "CA000013",
-											"description": "Required. ",
-											"type": "text"
-										},
-										{
-											"key": "content_guid",
-											"value": "CRD73",
 											"type": "text"
 										}
 									]
 								},
 								"url": {
-									"raw": "{{base_url}}lesson/content/edit/3",
+									"raw": "{{base_url}}course/content/GTM13/edit",
 									"host": [
-										"{{base_url}}lesson"
+										"{{base_url}}course"
 									],
 									"path": [
 										"content",
-										"edit",
-										"3"
+										"GTM13",
+										"edit"
 									]
 								}
 							},
 							"response": []
 						},
 						{
-							"name": "View content",
+							"name": "View content/Get file url",
 							"id": "371b223d-f319-44e1-a956-4c99e8fcfb9d",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
 							},
 							"request": {
-								"method": "GET",
+								"method": "POST",
 								"header": [],
 								"url": {
-									"raw": "{{base_url}}lesson/content/view/74",
+									"raw": "{{base_url}}course/content/GTM13/view",
 									"host": [
-										"{{base_url}}lesson"
+										"{{base_url}}course"
 									],
 									"path": [
 										"content",
-										"view",
-										"74"
+										"GTM13",
+										"view"
 									]
 								}
 							},
@@ -3744,7 +3785,7 @@
 							"response": []
 						},
 						{
-							"name": "Delete content",
+							"name": "Delete content/Delete file",
 							"id": "86e7966c-ac94-424c-b4e0-88e9c35cbb1e",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
@@ -3761,154 +3802,6 @@
 										"content",
 										"delete",
 										"66"
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "Upload files",
-							"id": "113ea524-36ac-4b99-a178-db82d65a9837",
-							"protocolProfileBehavior": {
-								"disableBodyPruning": true
-							},
-							"request": {
-								"method": "POST",
-								"header": [],
-								"body": {
-									"mode": "formdata",
-									"formdata": [
-										{
-											"key": "userfile",
-											"type": "file",
-											"description": "Required",
-											"src": "/C:/Users/d_asi/Downloads/GTmetrix-report-mv-sanity.netlify.app-20230306T005216-v2djnAGE.pdf"
-										},
-										{
-											"key": "created_by",
-											"value": "CA00001",
-											"description": "Required",
-											"type": "text"
-										},
-										{
-											"key": "section_id",
-											"value": "3",
-											"description": "Required",
-											"type": "text"
-										}
-									]
-								},
-								"url": {
-									"raw": "{{base_url}}lesson/content/upload/3",
-									"host": [
-										"{{base_url}}lesson"
-									],
-									"path": [
-										"content",
-										"upload",
-										"3"
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "Replace file",
-							"id": "94ce661e-209d-44ce-b13d-c17b5a6cdfa0",
-							"protocolProfileBehavior": {
-								"disableBodyPruning": true
-							},
-							"request": {
-								"method": "POST",
-								"header": [],
-								"body": {
-									"mode": "formdata",
-									"formdata": [
-										{
-											"key": "file_hash",
-											"value": "1678366722_dbaec60ccd6b39e88ea7.pdf",
-											"description": "Required",
-											"type": "text"
-										},
-										{
-											"key": "section_id",
-											"value": "3",
-											"type": "text"
-										},
-										{
-											"key": "userfile",
-											"description": "Required",
-											"type": "file",
-											"src": "/C:/Users/d_asi/Downloads/invoice.pdf"
-										},
-										{
-											"key": "created_by",
-											"value": "CA00001",
-											"description": "Required",
-											"type": "text"
-										}
-									]
-								},
-								"url": {
-									"raw": "{{base_url}}lesson/content/replace_file/3",
-									"host": [
-										"{{base_url}}lesson"
-									],
-									"path": [
-										"content",
-										"replace_file",
-										"3"
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "Get file",
-							"id": "3b3791b5-0710-4b31-b460-94419c329466",
-							"protocolProfileBehavior": {
-								"disableBodyPruning": true
-							},
-							"request": {
-								"method": "GET",
-								"header": [],
-								"url": {
-									"raw": "{{base_url}}lesson/content/get_file?file_hash=1678367040_f870f5191fd4c2e393ac.pdf",
-									"host": [
-										"{{base_url}}lesson"
-									],
-									"path": [
-										"content",
-										"get_file"
-									],
-									"query": [
-										{
-											"key": "file_hash",
-											"value": "1678367040_f870f5191fd4c2e393ac.pdf"
-										}
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "Delete file",
-							"id": "ca60dd64-601b-4616-90c4-e1913d2c115c",
-							"protocolProfileBehavior": {
-								"disableBodyPruning": true
-							},
-							"request": {
-								"method": "DELETE",
-								"header": [],
-								"url": {
-									"raw": "{{base_url}}lesson/content/delete_file/1677273308_ac302c61355598e0f67f.png",
-									"host": [
-										"{{base_url}}lesson"
-									],
-									"path": [
-										"content",
-										"delete_file",
-										"1677273308_ac302c61355598e0f67f.png"
 									]
 								}
 							},
@@ -7505,7 +7398,7 @@
 									"formdata": [
 										{
 											"key": "user_guid",
-											"value": "UR44",
+											"value": "ANK35",
 											"type": "text"
 										},
 										{
@@ -7517,18 +7410,19 @@
 										{
 											"key": "session_id",
 											"value": "1f576c9d-493f-5323-8d82-2a404b2b831f",
-											"type": "text"
+											"type": "text",
+											"disabled": true
 										}
 									]
 								},
 								"url": {
-									"raw": "{{base_url}}tests/report/SJT1",
+									"raw": "{{base_url}}tests/report/BAS6",
 									"host": [
 										"{{base_url}}tests"
 									],
 									"path": [
 										"report",
-										"SJT1"
+										"BAS6"
 									]
 								}
 							},
