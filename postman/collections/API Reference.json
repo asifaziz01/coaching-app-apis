@@ -3582,24 +3582,25 @@
 										{
 											"key": "type",
 											"value": "image",
-											"type": "text"
-										},
-										{
-											"key": "userfile",
-											"type": "file",
-											"src": "/F:/Download/Project Files/Coaching App/QA6/paralelogram.jpg"
-										},
-										{
-											"key": "type",
-											"value": "pdf",
 											"type": "text",
 											"disabled": true
 										},
 										{
 											"key": "userfile",
 											"type": "file",
-											"value": null,
+											"fileNotInWorkingDirectoryWarning": "This file isn't in your working directory. Teammates you share this request with won't be able to use this file. To make collaboration easier you can setup your working directory in Settings.",
+											"src": "/F:/Download/Project Files/Coaching App/QA6/paralelogram.jpg",
 											"disabled": true
+										},
+										{
+											"key": "type",
+											"value": "pdf",
+											"type": "text"
+										},
+										{
+											"key": "userfile",
+											"type": "file",
+											"src": "/F:/Download/GTmetrix-report-canadianinsulin.com-20220627T101033-51PY5FMn.pdf"
 										},
 										{
 											"key": "type",
@@ -3670,7 +3671,13 @@
 											"key": "content",
 											"value": "HTML Elements2\nThe HTML element is everything from the start tag to the end tag:\n\n<tagname>Content goes here...</tagname>\nExamples of some HTML elements:\n\n<h1>My First Heading</h1>\n<p>My first paragraph.</p>\nStart tag\tElement content\tEnd tag\n<h1>\tMy First Heading\t</h1>\n<p>\tMy first paragraph.\t</p>\n<br>\tnone\tnone\n",
 											"description": "Required. Actual content. Content can be html, full path for audio/video/pdf/other files or links for youtube videos",
-											"type": "text"
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "userfile",
+											"type": "file",
+											"src": "/F:/Download/medicaldepot.pdf"
 										}
 									]
 								},
@@ -6057,14 +6064,14 @@
 										{
 											"key": "pass_marks",
 											"value": "30",
-											"description": "Passing marks of test. Positive values are allowed without (+ or -) sign. Passing marks can be fixed marks or percentage. Default value is 0. ",
-											"type": "text"
+											"type": "text",
+											"description": "Passing marks of test. Positive values are allowed without (+ or -) sign. Passing marks can be fixed marks or percentage. Default value is 0. "
 										},
 										{
 											"key": "pass_marks_unit",
 											"value": "percentage",
-											"description": "Passing marks unit. Accepted values are [fixed, percentage]. Default value is fixed ",
-											"type": "text"
+											"type": "text",
+											"description": "Passing marks unit. Accepted values are [fixed, percentage]. Default value is fixed "
 										},
 										{
 											"key": "time_per_question",
@@ -6075,43 +6082,84 @@
 										{
 											"key": "test_duration",
 											"value": "0",
-											"description": "Time alloted in minutes for overall test. Whole numbers are allowed. Default value is 0 (no time limit). Either time_per_question or test_duration will be applicable at a time",
-											"type": "text"
+											"type": "text",
+											"description": "Time alloted in minutes for overall test. Whole numbers are allowed. Default value is 0 (no time limit). Either time_per_question or test_duration will be applicable at a time"
 										},
 										{
 											"key": "show_timer",
 											"value": "false",
-											"description": "Display the timer. Allowed values [true, false]. Default value is false",
-											"type": "text"
+											"type": "text",
+											"description": "Display the timer. Allowed values [true, false]. Default value is false"
 										},
 										{
 											"key": "show_result",
 											"value": "immediately",
-											"description": "Setting for when to show the result to student. Allowed values are [immediately, on_date, manually]",
-											"type": "text"
+											"type": "text",
+											"description": "Setting for when to show the result to student. Allowed values are [immediately, on_date, manually]"
 										},
 										{
 											"key": "on_date",
 											"value": "01-12-2023 15:25:00",
-											"description": "Date on which to release the result. Will be used only when on_date setting is selected above. Default value NULL. Format DD-MM-YYYY HH:MM:SS",
-											"type": "text"
+											"type": "text",
+											"description": "Date on which to release the result. Will be used only when on_date setting is selected above. Default value NULL. Format DD-MM-YYYY HH:MM:SS"
 										},
 										{
 											"key": "num_attempts",
 											"value": "0",
-											"description": "Number of attempts for test. Default value is 0. Allowed values are [1, 2, 3...10]",
+											"type": "text",
+											"description": "Number of attempts for test. Default value is 0. Allowed values are [1, 2, 3...10]"
+										},
+										{
+											"key": "show_question_hint_on_test_page",
+											"value": "0",
+											"type": "text",
+											"description": "Setting to display question hint on test page"
+										},
+										{
+											"key": "randomize_questions_within_test",
+											"value": "1",
+											"type": "text",
+											"description": "Randomize test questions. Accepted values are [0 and 1]"
+										},
+										{
+											"key": "randomize_answer_choices",
+											"value": "1",
+											"type": "text",
+											"description": "Randomize answer choices. Accepted values are [0 and 1]"
+										},
+										{
+											"key": "randomize_questions_within_comprehension",
+											"value": "0",
+											"type": "text",
+											"description": "Randomize sub(child) questions within a comprehension question (parent). This setting will be applicable to only comprehension type questions. "
+										},
+										{
+											"key": "allow_bookmark_questions",
+											"value": "1",
+											"type": "text",
+											"description": "Randomize those answer choices which are marked as \"fixed\" (eg None of the above). Can be set only when \"randomize_answer_choices\" is 1"
+										},
+										{
+											"key": "show_bookmark_question_correct_answer",
+											"value": "0",
 											"type": "text"
+										},
+										{
+											"key": "randomize_fixed_answer_choices",
+											"value": "0",
+											"type": "text",
+											"disabled": true
 										}
 									]
 								},
 								"url": {
-									"raw": "{{base_url}}tests/settings/SJT1",
+									"raw": "{{base_url}}tests/settings/BAS6",
 									"host": [
 										"{{base_url}}tests"
 									],
 									"path": [
 										"settings",
-										"SJT1"
+										"BAS6"
 									]
 								},
 								"description": "This API will update a test and return test GUID. Input parameters are\n\n**test_guid**: {required}{url parameter}\n\n**title**: required, alpha-numeric with punctuations (- , _ ' \" ), minimum length 1, max length 200 characters\n\n**details**: string (html allowed), max length 1000 characters\n\n**instructions**: string (html allowed), max length 1000 characters\n\n**status**: 0 = Unpublished, 1 = Published, 2 = Archived\n\n**created_by**: user guid"
@@ -6258,13 +6306,13 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{base_url}}tests/view/SEL68",
+									"raw": "{{base_url}}tests/view/BAS6",
 									"host": [
 										"{{base_url}}tests"
 									],
 									"path": [
 										"view",
-										"SEL68"
+										"BAS6"
 									]
 								},
 								"description": "API to get details of a test. Required url parameter is test guid"
@@ -6559,26 +6607,289 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{base_url}}tests/preview/SJT1",
+									"raw": "{{base_url}}tests/preview/BAS6/1",
 									"host": [
 										"{{base_url}}tests"
 									],
 									"path": [
 										"preview",
-										"SJT1"
+										"BAS6",
+										"1"
 									]
 								},
 								"description": "This API will take two parameters in the URL\n\n1. test guid (required)\n2. choices (0, 1)\n    \n\nThe second parameter choices is for whether answer choices are also needed with the question."
 							},
+							"response": []
+						},
+						{
+							"name": "Add question",
+							"id": "aac688a8-c84f-42fe-b974-fa04416d14d1",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "question",
+											"value": "Please choose the correct answer\n\nYou manage a team of 10 people. Your employees are competent and cooperative. However, you noticed that lately they tend to take long coffee breaks and work rates seem slower. You are happy there is a good atmosphere in the office, but feel uncomfortable about the effect it is having on your employees' work.\n\nWhat would be the best response?",
+											"description": "Required. Actual question. Any string value including htm formatting is allowed",
+											"type": "text"
+										},
+										{
+											"key": "userfile",
+											"type": "file",
+											"src": "/F:/Download/Project Files/Cosmic Academy/esl-lab files/elem2.mp3",
+											"disabled": true
+										},
+										{
+											"key": "question_type",
+											"value": "mcmc",
+											"description": "Required. Accepted values [mcmc, tf, la, comp\nmcmc = Multi Choice\ntf = True Flase\nla = Essay\ncomp = Comprehensive",
+											"type": "text"
+										},
+										{
+											"key": "choice[0]",
+											"value": "Announce that from now on, any employee who wants to take a break should speak to you first",
+											"description": "Aleast 1 answer choice is required.. wysiwyg",
+											"type": "text"
+										},
+										{
+											"key": "choice[1]",
+											"value": "Decide that at any given time only one employee can take a coffee break",
+											"description": "wysiwyg",
+											"type": "text"
+										},
+										{
+											"key": "choice[2]",
+											"value": "Discuss the situation with the team and ask for their cooperation",
+											"description": "wysiwyg",
+											"type": "text"
+										},
+										{
+											"key": "choice[3]",
+											"value": "Announce deadlines for each task the team gets, and reprimand employees who don’t finish their tasks on time",
+											"type": "text"
+										},
+										{
+											"key": "correct_answer[0]",
+											"value": "0",
+											"description": "Atleast 1 value required. This is the array to indicate correct answer(s). Array keys should match the keys from choice keys above. \n0 or 1",
+											"type": "text"
+										},
+										{
+											"key": "correct_answer[1]",
+											"value": "0",
+											"description": "0, 1",
+											"type": "text"
+										},
+										{
+											"key": "correct_answer[2]",
+											"value": "1",
+											"description": "0, 1",
+											"type": "text"
+										},
+										{
+											"key": "correct_answer[3]",
+											"value": "0",
+											"type": "text"
+										},
+										{
+											"key": "order[0]",
+											"value": "1",
+											"description": "Default ordering will be according to array values ie ,2,3. Array keys should match the keys from choice keys above",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "order[1]",
+											"value": "2",
+											"description": "Natural number",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "order[2]",
+											"value": "3",
+											"description": "NAtural number",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "order[3]",
+											"value": "4",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "feedback",
+											"value": "",
+											"description": "Optional. wysiwyg editor",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "answer_feedback",
+											"value": "",
+											"description": "Optional. wysiwyg editor",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "marks",
+											"value": "1.5",
+											"description": "Optional. Positive floating numbers only",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "neg_marks",
+											"value": "0",
+											"description": "Optional. Positive floating numbers only",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "time",
+											"value": "30",
+											"description": "Time in seconds. Natural numbers only",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "created_by",
+											"value": "UR1",
+											"type": "text",
+											"description": "User guid"
+										},
+										{
+											"key": "parent_id",
+											"value": "QN110",
+											"type": "text",
+											"description": "Optional",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "{{base_url}}tests/create_question/SJT1",
+									"host": [
+										"{{base_url}}tests"
+									],
+									"path": [
+										"create_question",
+										"SJT1"
+									]
+								},
+								"description": "This API will add a new question in test and return test GUID and question GUID. Input parameters are\n\n**question**: required, string (html allowed)\n\n**question_type**: required, (values- mcmc = Multi Choice, tf = True False, la = Essay, comp = Comprehension)\n\n**feedback**: string (html allowed), max length 1000 characters\n\n**answer_feedback**: string (html allowed), max length 1000 characters\n\n**marks**: positive integers with float values (0, 1, 2, 3 ...) (0.25, 0.50 etc)\n\n**neg_marks**: positive integers with float values (0, 1, 2, 3 ...) (0.25, 0.50 etc)\n\n**time**: natural numbers (0, 1, 2, 3 ...). \\[unit measured in seconds\\]\n\n**choice**: required, string (html allowed). Input field must be an array eg\n\nchoice\\[0\\] = {value}\n\nchoice\\[1\\] = {value}\n\nchoice\\[2\\] = {value}\n\n**correct_answer**: at least one required, Allowed values- 0 or 1. Input field must be an array eg\n\ncorrect_answer\\[0\\] = {value}\n\ncorrect_answer\\[1\\] = {value}\n\ncorrect_answer\\[2\\] = {value}\n\n**position**: order of answer choices. Values- 1, 2, 3.... Input field must be an array eg\n\nposition\\[0\\] = {value} 1 or NULL\n\nposition\\[1\\] = {value} 2 or NULL\n\nposition\\[2\\] = {value} 3 or NULL\n\n**status**: 0 = Unpublished, 1 = Published\n\n**created_by**: user guid"
+							},
 							"response": [
 								{
-									"id": "2858114f-9888-4371-b16f-e480911cf7be",
-									"name": "Example",
+									"id": "3d3f687a-77c8-4a29-8a46-025e154923d9",
+									"name": "Add question",
 									"originalRequest": {
-										"method": "GET",
+										"method": "POST",
 										"header": [],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "question",
+													"value": "What is the capital of Britain?",
+													"type": "text"
+												},
+												{
+													"key": "question_type",
+													"value": "mcsc",
+													"type": "text"
+												},
+												{
+													"key": "feedback",
+													"value": "none",
+													"type": "text"
+												},
+												{
+													"key": "answer_feedback",
+													"value": "",
+													"type": "text"
+												},
+												{
+													"key": "marks",
+													"value": "1",
+													"type": "text"
+												},
+												{
+													"key": "neg_marks",
+													"value": "0",
+													"type": "text"
+												},
+												{
+													"key": "time",
+													"value": "30",
+													"type": "text"
+												},
+												{
+													"key": "status",
+													"value": "1",
+													"type": "text"
+												},
+												{
+													"key": "created_by",
+													"value": "CA000030",
+													"type": "text"
+												},
+												{
+													"key": "choice[0]",
+													"value": "London",
+													"type": "text"
+												},
+												{
+													"key": "choice[1]",
+													"value": "Bristol",
+													"type": "text"
+												},
+												{
+													"key": "choice[2]",
+													"value": "Manchester",
+													"type": "text"
+												},
+												{
+													"key": "correct_answer[0]",
+													"value": "1",
+													"type": "text"
+												},
+												{
+													"key": "correct_answer[1]",
+													"value": "0",
+													"type": "text"
+												},
+												{
+													"key": "correct_answer[2]",
+													"value": "0",
+													"type": "text"
+												},
+												{
+													"key": "order[0]",
+													"value": "1",
+													"type": "text"
+												},
+												{
+													"key": "order[1]",
+													"value": "2",
+													"type": "text"
+												},
+												{
+													"key": "order[2]",
+													"value": "3",
+													"type": "text"
+												}
+											]
+										},
 										"url": {
-											"raw": "https://developer1.website/dev/caapis/public/tests/get_question/QA00006/1",
+											"raw": "https://developer1.website/dev/caapis/public/tests/create_question/TE00008",
 											"protocol": "https",
 											"host": [
 												"developer1",
@@ -6589,9 +6900,8 @@
 												"caapis",
 												"public",
 												"tests",
-												"get_question",
-												"QA00006",
-												"1"
+												"create_question",
+												"TE00008"
 											]
 										}
 									},
@@ -6601,7 +6911,7 @@
 									"header": [
 										{
 											"key": "Date",
-											"value": "Tue, 06 Dec 2022 10:29:06 GMT"
+											"value": "Mon, 05 Dec 2022 12:28:07 GMT"
 										},
 										{
 											"key": "Server",
@@ -6657,7 +6967,7 @@
 										},
 										{
 											"key": "Content-Length",
-											"value": "303"
+											"value": "117"
 										},
 										{
 											"key": "Keep-Alive",
@@ -6669,9 +6979,310 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\n    \"success\": true,\n    \"message\": \"QUESTION_FOUND\",\n    \"payload\": [\n        {\n            \"question\": {\n                \"ID\": \"6\",\n                \"guid\": \"QA00006\",\n                \"question\": \"What is the capital of India?\",\n                \"question_type\": \"mcsc\",\n                \"feedback\": \"none\",\n                \"answer_feedback\": \"\",\n                \"marks\": \"1\",\n                \"neg_marks\": \"0\",\n                \"time\": \"30\",\n                \"status\": \"1\",\n                \"created_by\": \"CA000030\",\n                \"created_on\": \"2022-12-05 05:27:56\"\n            },\n            \"choices\": [\n                {\n                    \"choice\": \"Chennai\",\n                    \"correct_answer\": \"1\",\n                    \"status\": \"1\",\n                    \"position\": \"1\"\n                },\n                {\n                    \"choice\": \"Lucknow\",\n                    \"correct_answer\": \"0\",\n                    \"status\": \"1\",\n                    \"position\": \"2\"\n                },\n                {\n                    \"choice\": \"New Delhi\",\n                    \"correct_answer\": \"0\",\n                    \"status\": \"1\",\n                    \"position\": \"3\"\n                }\n            ]\n        }\n    ]\n}"
+									"body": "{\n    \"success\": true,\n    \"message\": \"QUESTION_ADDED_SUCCESSFULLY\",\n    \"payload\": {\n        \"test_id\": \"TE00008\",\n        \"question_id\": \"QA00008\"\n    }\n}"
 								}
 							]
+						},
+						{
+							"name": "Bulk upload questions",
+							"id": "c059e829-2670-47cd-9aeb-7f1d1bbd69f5",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "userfile",
+											"description": "Required. Text files (.txt)",
+											"type": "file",
+											"src": "/F:/Download/Project Files/Coaching App/QA6/Mathmatics 1.txt"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{base_url}}tests/upload_questions/BAS6",
+									"host": [
+										"{{base_url}}tests"
+									],
+									"path": [
+										"upload_questions",
+										"BAS6"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Save bulk uploaded questions",
+							"id": "3f515e7a-a25c-411c-a68b-5fb6c77d2422",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "questions[1][question]",
+											"value": "Who among the following got the Bharat Ratna award before becoming the president of India?",
+											"description": "Required. Actual question. Any string value including htm formatting is allowed",
+											"type": "text"
+										},
+										{
+											"key": "questions[1][question_type]",
+											"value": "mcmc",
+											"description": "Required. Accepted values [mcmc, tf, la, comp\nmcmc = Multi Choice\ntf = True Flase\nla = Essay\ncomp = Comprehensive",
+											"type": "text"
+										},
+										{
+											"key": "questions[1][choice][0]",
+											"value": "R Venkataraman",
+											"description": "Aleast 1 answer choice is required.. wysiwyg",
+											"type": "text"
+										},
+										{
+											"key": "questions[1][choice][1]",
+											"value": "Dr. Rajendra Prasad",
+											"description": "wysiwyg",
+											"type": "text"
+										},
+										{
+											"key": "questions[1][choice][2]",
+											"value": "DR Zakir Hussian",
+											"description": "wysiwyg",
+											"type": "text"
+										},
+										{
+											"key": "questions[1][choice][3]",
+											"value": "All of the above.",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "questions[1][correct_answer][0]",
+											"value": "0",
+											"description": "Atleast 1 value required. This is the array to indicate correct answer(s). Array keys should match the keys from choice keys above. \n0 or 1",
+											"type": "text"
+										},
+										{
+											"key": "questions[1][correct_answer][1]",
+											"value": "0",
+											"description": "0, 1",
+											"type": "text"
+										},
+										{
+											"key": "questions[1][correct_answer][2]",
+											"value": "1",
+											"description": "0, 1",
+											"type": "text"
+										},
+										{
+											"key": "questions[1][correct_answer][3]",
+											"value": "0",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "questions[1][order][0]",
+											"value": "1",
+											"description": "Default ordering will be according to array values ie ,2,3. Array keys should match the keys from choice keys above",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "questions[1][order][1]",
+											"value": "2",
+											"description": "Natural number",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "questions[1][order][2]",
+											"value": "3",
+											"description": "NAtural number",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "questions[1][order][3]",
+											"value": "4",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "questions[1][feedback]",
+											"value": "",
+											"description": "Optional. wysiwyg editor",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "questions[1][answer_feedback]",
+											"value": "",
+											"description": "Optional. wysiwyg editor",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "questions[1][marks]",
+											"value": "1.5",
+											"description": "Optional. Positive floating numbers only",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "questions[1][neg_marks]",
+											"value": "0",
+											"description": "Optional. Positive floating numbers only",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "questions[1][time]",
+											"value": "30",
+											"description": "Time in seconds. Natural numbers only",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "questions[1][created_by]",
+											"value": "{{admin_guid}}",
+											"type": "text",
+											"description": "User guid"
+										},
+										{
+											"key": "questions[1][parent_id]",
+											"value": "",
+											"type": "text",
+											"description": "Optional. Guid of parent question",
+											"disabled": true
+										},
+										{
+											"key": "questions[2][question]",
+											"value": "This is second question",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{base_url}}tests/save_uploaded_questions/TS66",
+									"host": [
+										"{{base_url}}tests"
+									],
+									"path": [
+										"save_uploaded_questions",
+										"TS66"
+									]
+								},
+								"description": "This API will add a new question in test and return test GUID and question GUID. Input parameters are\n\n**question**: required, string (html allowed)\n\n**question_type**: required, (values- mcmc = Multi Choice, tf = True False, la = Essay, comp = Comprehension)\n\n**feedback**: string (html allowed), max length 1000 characters\n\n**answer_feedback**: string (html allowed), max length 1000 characters\n\n**marks**: positive integers with float values (0, 1, 2, 3 ...) (0.25, 0.50 etc)\n\n**neg_marks**: positive integers with float values (0, 1, 2, 3 ...) (0.25, 0.50 etc)\n\n**time**: natural numbers (0, 1, 2, 3 ...). \\[unit measured in seconds\\]\n\n**choice**: required, string (html allowed). Input field must be an array eg\n\nchoice\\[0\\] = {value}\n\nchoice\\[1\\] = {value}\n\nchoice\\[2\\] = {value}\n\n**correct_answer**: at least one required, Allowed values- 0 or 1. Input field must be an array eg\n\ncorrect_answer\\[0\\] = {value}\n\ncorrect_answer\\[1\\] = {value}\n\ncorrect_answer\\[2\\] = {value}\n\n**position**: order of answer choices. Values- 1, 2, 3.... Input field must be an array eg\n\nposition\\[0\\] = {value} 1 or NULL\n\nposition\\[1\\] = {value} 2 or NULL\n\nposition\\[2\\] = {value} 3 or NULL\n\n**status**: 0 = Unpublished, 1 = Published\n\n**created_by**: user guid"
+							},
+							"response": []
+						},
+						{
+							"name": "Get test questions",
+							"id": "f3de4719-e850-46c9-902e-7588e082cb3b",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}tests/questions/MAT59",
+									"host": [
+										"{{base_url}}tests"
+									],
+									"path": [
+										"questions",
+										"MAT59"
+									]
+								},
+								"description": "This API will take two parameters in the URL\n\n1. test guid (required)\n2. choices (0, 1)\n    \n\nThe second parameter choices is for whether answer choices are also needed with the question."
+							},
+							"response": []
+						},
+						{
+							"name": "Remove question from test",
+							"id": "363cea4e-8365-468b-a71d-44c8eacbbe7d",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "questions[0]",
+											"value": "QN5",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "questions[1]",
+											"value": "QN6",
+											"type": "text"
+										},
+										{
+											"key": "questions[2]",
+											"value": "QN7",
+											"type": "text"
+										},
+										{
+											"key": "questions[3]",
+											"value": "QN8",
+											"type": "text"
+										},
+										{
+											"key": "updated_by",
+											"value": "{{admin_guid}}",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{base_url}}tests/remove_question/TS58",
+									"host": [
+										"{{base_url}}tests"
+									],
+									"path": [
+										"remove_question",
+										"TS58"
+									]
+								},
+								"description": "API to remove one question from a test. Required url parameters are **test guid** and **question guid**."
+							},
+							"response": []
+						},
+						{
+							"name": "Remove all questions from test",
+							"id": "0ee55bdd-3414-45bb-9893-8b18deabb667",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}tests/remove_all_questions/BAS6",
+									"host": [
+										"{{base_url}}tests"
+									],
+									"path": [
+										"remove_all_questions",
+										"BAS6"
+									]
+								},
+								"description": "API to remove all questions from a test. Required url parameter is test guid."
+							},
+							"response": []
 						}
 					],
 					"id": "e84c4aab-b07a-468f-b265-4729080ed1c8"
@@ -7700,368 +8311,6 @@
 					"name": "Questions",
 					"item": [
 						{
-							"name": "Add question",
-							"id": "aac688a8-c84f-42fe-b974-fa04416d14d1",
-							"protocolProfileBehavior": {
-								"disableBodyPruning": true
-							},
-							"request": {
-								"method": "POST",
-								"header": [],
-								"body": {
-									"mode": "formdata",
-									"formdata": [
-										{
-											"key": "question",
-											"value": "Please choose the correct answer\n\nYou manage a team of 10 people. Your employees are competent and cooperative. However, you noticed that lately they tend to take long coffee breaks and work rates seem slower. You are happy there is a good atmosphere in the office, but feel uncomfortable about the effect it is having on your employees' work.\n\nWhat would be the best response?",
-											"description": "Required. Actual question. Any string value including htm formatting is allowed",
-											"type": "text"
-										},
-										{
-											"key": "userfile",
-											"type": "file",
-											"src": "/F:/Download/Project Files/Cosmic Academy/esl-lab files/elem2.mp3",
-											"disabled": true
-										},
-										{
-											"key": "question_type",
-											"value": "mcmc",
-											"description": "Required. Accepted values [mcmc, tf, la, comp\nmcmc = Multi Choice\ntf = True Flase\nla = Essay\ncomp = Comprehensive",
-											"type": "text"
-										},
-										{
-											"key": "choice[0]",
-											"value": "Announce that from now on, any employee who wants to take a break should speak to you first",
-											"description": "Aleast 1 answer choice is required.. wysiwyg",
-											"type": "text"
-										},
-										{
-											"key": "choice[1]",
-											"value": "Decide that at any given time only one employee can take a coffee break",
-											"description": "wysiwyg",
-											"type": "text"
-										},
-										{
-											"key": "choice[2]",
-											"value": "Discuss the situation with the team and ask for their cooperation",
-											"description": "wysiwyg",
-											"type": "text"
-										},
-										{
-											"key": "choice[3]",
-											"value": "Announce deadlines for each task the team gets, and reprimand employees who don’t finish their tasks on time",
-											"type": "text"
-										},
-										{
-											"key": "correct_answer[0]",
-											"value": "0",
-											"description": "Atleast 1 value required. This is the array to indicate correct answer(s). Array keys should match the keys from choice keys above. \n0 or 1",
-											"type": "text"
-										},
-										{
-											"key": "correct_answer[1]",
-											"value": "0",
-											"description": "0, 1",
-											"type": "text"
-										},
-										{
-											"key": "correct_answer[2]",
-											"value": "1",
-											"description": "0, 1",
-											"type": "text"
-										},
-										{
-											"key": "correct_answer[3]",
-											"value": "0",
-											"type": "text"
-										},
-										{
-											"key": "order[0]",
-											"value": "1",
-											"description": "Default ordering will be according to array values ie ,2,3. Array keys should match the keys from choice keys above",
-											"type": "text",
-											"disabled": true
-										},
-										{
-											"key": "order[1]",
-											"value": "2",
-											"description": "Natural number",
-											"type": "text",
-											"disabled": true
-										},
-										{
-											"key": "order[2]",
-											"value": "3",
-											"description": "NAtural number",
-											"type": "text",
-											"disabled": true
-										},
-										{
-											"key": "order[3]",
-											"value": "4",
-											"type": "text",
-											"disabled": true
-										},
-										{
-											"key": "feedback",
-											"value": "",
-											"description": "Optional. wysiwyg editor",
-											"type": "text",
-											"disabled": true
-										},
-										{
-											"key": "answer_feedback",
-											"value": "",
-											"description": "Optional. wysiwyg editor",
-											"type": "text",
-											"disabled": true
-										},
-										{
-											"key": "marks",
-											"value": "1.5",
-											"description": "Optional. Positive floating numbers only",
-											"type": "text",
-											"disabled": true
-										},
-										{
-											"key": "neg_marks",
-											"value": "0",
-											"description": "Optional. Positive floating numbers only",
-											"type": "text",
-											"disabled": true
-										},
-										{
-											"key": "time",
-											"value": "30",
-											"description": "Time in seconds. Natural numbers only",
-											"type": "text",
-											"disabled": true
-										},
-										{
-											"key": "created_by",
-											"value": "UR1",
-											"type": "text",
-											"description": "User guid"
-										},
-										{
-											"key": "parent_id",
-											"value": "QN110",
-											"type": "text",
-											"description": "Optional",
-											"disabled": true
-										}
-									]
-								},
-								"url": {
-									"raw": "{{base_url_dev}}tests/create_question/SJT1",
-									"host": [
-										"{{base_url_dev}}tests"
-									],
-									"path": [
-										"create_question",
-										"SJT1"
-									]
-								},
-								"description": "This API will add a new question in test and return test GUID and question GUID. Input parameters are\n\n**question**: required, string (html allowed)\n\n**question_type**: required, (values- mcmc = Multi Choice, tf = True False, la = Essay, comp = Comprehension)\n\n**feedback**: string (html allowed), max length 1000 characters\n\n**answer_feedback**: string (html allowed), max length 1000 characters\n\n**marks**: positive integers with float values (0, 1, 2, 3 ...) (0.25, 0.50 etc)\n\n**neg_marks**: positive integers with float values (0, 1, 2, 3 ...) (0.25, 0.50 etc)\n\n**time**: natural numbers (0, 1, 2, 3 ...). \\[unit measured in seconds\\]\n\n**choice**: required, string (html allowed). Input field must be an array eg\n\nchoice\\[0\\] = {value}\n\nchoice\\[1\\] = {value}\n\nchoice\\[2\\] = {value}\n\n**correct_answer**: at least one required, Allowed values- 0 or 1. Input field must be an array eg\n\ncorrect_answer\\[0\\] = {value}\n\ncorrect_answer\\[1\\] = {value}\n\ncorrect_answer\\[2\\] = {value}\n\n**position**: order of answer choices. Values- 1, 2, 3.... Input field must be an array eg\n\nposition\\[0\\] = {value} 1 or NULL\n\nposition\\[1\\] = {value} 2 or NULL\n\nposition\\[2\\] = {value} 3 or NULL\n\n**status**: 0 = Unpublished, 1 = Published\n\n**created_by**: user guid"
-							},
-							"response": [
-								{
-									"id": "3d3f687a-77c8-4a29-8a46-025e154923d9",
-									"name": "Add question",
-									"originalRequest": {
-										"method": "POST",
-										"header": [],
-										"body": {
-											"mode": "formdata",
-											"formdata": [
-												{
-													"key": "question",
-													"value": "What is the capital of Britain?",
-													"type": "text"
-												},
-												{
-													"key": "question_type",
-													"value": "mcsc",
-													"type": "text"
-												},
-												{
-													"key": "feedback",
-													"value": "none",
-													"type": "text"
-												},
-												{
-													"key": "answer_feedback",
-													"value": "",
-													"type": "text"
-												},
-												{
-													"key": "marks",
-													"value": "1",
-													"type": "text"
-												},
-												{
-													"key": "neg_marks",
-													"value": "0",
-													"type": "text"
-												},
-												{
-													"key": "time",
-													"value": "30",
-													"type": "text"
-												},
-												{
-													"key": "status",
-													"value": "1",
-													"type": "text"
-												},
-												{
-													"key": "created_by",
-													"value": "CA000030",
-													"type": "text"
-												},
-												{
-													"key": "choice[0]",
-													"value": "London",
-													"type": "text"
-												},
-												{
-													"key": "choice[1]",
-													"value": "Bristol",
-													"type": "text"
-												},
-												{
-													"key": "choice[2]",
-													"value": "Manchester",
-													"type": "text"
-												},
-												{
-													"key": "correct_answer[0]",
-													"value": "1",
-													"type": "text"
-												},
-												{
-													"key": "correct_answer[1]",
-													"value": "0",
-													"type": "text"
-												},
-												{
-													"key": "correct_answer[2]",
-													"value": "0",
-													"type": "text"
-												},
-												{
-													"key": "order[0]",
-													"value": "1",
-													"type": "text"
-												},
-												{
-													"key": "order[1]",
-													"value": "2",
-													"type": "text"
-												},
-												{
-													"key": "order[2]",
-													"value": "3",
-													"type": "text"
-												}
-											]
-										},
-										"url": {
-											"raw": "https://developer1.website/dev/caapis/public/tests/create_question/TE00008",
-											"protocol": "https",
-											"host": [
-												"developer1",
-												"website"
-											],
-											"path": [
-												"dev",
-												"caapis",
-												"public",
-												"tests",
-												"create_question",
-												"TE00008"
-											]
-										}
-									},
-									"status": "OK",
-									"code": 200,
-									"_postman_previewlanguage": "json",
-									"header": [
-										{
-											"key": "Date",
-											"value": "Mon, 05 Dec 2022 12:28:07 GMT"
-										},
-										{
-											"key": "Server",
-											"value": "Apache"
-										},
-										{
-											"key": "X-Powered-By",
-											"value": "PHP/7.4.33"
-										},
-										{
-											"key": "Access-Control-Allow-Origin",
-											"value": "*"
-										},
-										{
-											"key": "Access-Control-Allow-Headers",
-											"value": "X-API-KEY, Origin,X-Requested-With, Content-Type, Accept, Access-Control-Requested-Method, Authorization"
-										},
-										{
-											"key": "Access-Control-Allow-Methods",
-											"value": "GET, POST, OPTIONS, PATCH, PUT, DELETE"
-										},
-										{
-											"key": "Cache-control",
-											"value": "no-store, max-age=0, no-cache"
-										},
-										{
-											"key": "Strict-Transport-Security",
-											"value": "max-age=63072000; includeSubDomains"
-										},
-										{
-											"key": "X-Frame-Options",
-											"value": "SAMEORIGIN"
-										},
-										{
-											"key": "X-Content-Type-Options",
-											"value": "nosniff"
-										},
-										{
-											"key": "Upgrade",
-											"value": "h2,h2c"
-										},
-										{
-											"key": "Connection",
-											"value": "Upgrade, Keep-Alive"
-										},
-										{
-											"key": "Vary",
-											"value": "Accept-Encoding"
-										},
-										{
-											"key": "Content-Encoding",
-											"value": "gzip"
-										},
-										{
-											"key": "Content-Length",
-											"value": "117"
-										},
-										{
-											"key": "Keep-Alive",
-											"value": "timeout=3, max=500"
-										},
-										{
-											"key": "Content-Type",
-											"value": "application/json; charset=UTF-8"
-										}
-									],
-									"cookie": [],
-									"body": "{\n    \"success\": true,\n    \"message\": \"QUESTION_ADDED_SUCCESSFULLY\",\n    \"payload\": {\n        \"test_id\": \"TE00008\",\n        \"question_id\": \"QA00008\"\n    }\n}"
-								}
-							]
-						},
-						{
 							"name": "Update question",
 							"id": "dcb79152-ca6e-476f-acdb-5d41c69034d0",
 							"protocolProfileBehavior": {
@@ -8658,212 +8907,6 @@
 							]
 						},
 						{
-							"name": "Bulk upload questions",
-							"id": "c059e829-2670-47cd-9aeb-7f1d1bbd69f5",
-							"protocolProfileBehavior": {
-								"disableBodyPruning": true
-							},
-							"request": {
-								"method": "POST",
-								"header": [],
-								"body": {
-									"mode": "formdata",
-									"formdata": [
-										{
-											"key": "userfile",
-											"description": "Required. Text files (.txt)",
-											"type": "file",
-											"src": "/F:/Download/Project Files/Coaching App/QA6/Adjectives1.txt"
-										},
-										{
-											"key": "created_by",
-											"value": "UR1",
-											"type": "text"
-										}
-									]
-								},
-								"url": {
-									"raw": "{{base_url_dev}}tests/upload_questions/SEL68",
-									"host": [
-										"{{base_url_dev}}tests"
-									],
-									"path": [
-										"upload_questions",
-										"SEL68"
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "Save bulk uploaded questions",
-							"id": "3f515e7a-a25c-411c-a68b-5fb6c77d2422",
-							"protocolProfileBehavior": {
-								"disableBodyPruning": true
-							},
-							"request": {
-								"method": "POST",
-								"header": [],
-								"body": {
-									"mode": "formdata",
-									"formdata": [
-										{
-											"key": "questions[1][question]",
-											"value": "Who among the following got the Bharat Ratna award before becoming the president of India?",
-											"description": "Required. Actual question. Any string value including htm formatting is allowed",
-											"type": "text"
-										},
-										{
-											"key": "questions[1][question_type]",
-											"value": "mcmc",
-											"description": "Required. Accepted values [mcmc, tf, la, comp\nmcmc = Multi Choice\ntf = True Flase\nla = Essay\ncomp = Comprehensive",
-											"type": "text"
-										},
-										{
-											"key": "questions[1][choice][0]",
-											"value": "R Venkataraman",
-											"description": "Aleast 1 answer choice is required.. wysiwyg",
-											"type": "text"
-										},
-										{
-											"key": "questions[1][choice][1]",
-											"value": "Dr. Rajendra Prasad",
-											"description": "wysiwyg",
-											"type": "text"
-										},
-										{
-											"key": "questions[1][choice][2]",
-											"value": "DR Zakir Hussian",
-											"description": "wysiwyg",
-											"type": "text"
-										},
-										{
-											"key": "questions[1][choice][3]",
-											"value": "All of the above.",
-											"type": "text",
-											"disabled": true
-										},
-										{
-											"key": "questions[1][correct_answer][0]",
-											"value": "0",
-											"description": "Atleast 1 value required. This is the array to indicate correct answer(s). Array keys should match the keys from choice keys above. \n0 or 1",
-											"type": "text"
-										},
-										{
-											"key": "questions[1][correct_answer][1]",
-											"value": "0",
-											"description": "0, 1",
-											"type": "text"
-										},
-										{
-											"key": "questions[1][correct_answer][2]",
-											"value": "1",
-											"description": "0, 1",
-											"type": "text"
-										},
-										{
-											"key": "questions[1][correct_answer][3]",
-											"value": "0",
-											"type": "text",
-											"disabled": true
-										},
-										{
-											"key": "questions[1][order][0]",
-											"value": "1",
-											"description": "Default ordering will be according to array values ie ,2,3. Array keys should match the keys from choice keys above",
-											"type": "text",
-											"disabled": true
-										},
-										{
-											"key": "questions[1][order][1]",
-											"value": "2",
-											"description": "Natural number",
-											"type": "text",
-											"disabled": true
-										},
-										{
-											"key": "questions[1][order][2]",
-											"value": "3",
-											"description": "NAtural number",
-											"type": "text",
-											"disabled": true
-										},
-										{
-											"key": "questions[1][order][3]",
-											"value": "4",
-											"type": "text",
-											"disabled": true
-										},
-										{
-											"key": "questions[1][feedback]",
-											"value": "",
-											"description": "Optional. wysiwyg editor",
-											"type": "text",
-											"disabled": true
-										},
-										{
-											"key": "questions[1][answer_feedback]",
-											"value": "",
-											"description": "Optional. wysiwyg editor",
-											"type": "text",
-											"disabled": true
-										},
-										{
-											"key": "questions[1][marks]",
-											"value": "1.5",
-											"description": "Optional. Positive floating numbers only",
-											"type": "text",
-											"disabled": true
-										},
-										{
-											"key": "questions[1][neg_marks]",
-											"value": "0",
-											"description": "Optional. Positive floating numbers only",
-											"type": "text",
-											"disabled": true
-										},
-										{
-											"key": "questions[1][time]",
-											"value": "30",
-											"description": "Time in seconds. Natural numbers only",
-											"type": "text",
-											"disabled": true
-										},
-										{
-											"key": "questions[1][created_by]",
-											"value": "{{admin_guid}}",
-											"type": "text",
-											"description": "User guid"
-										},
-										{
-											"key": "questions[1][parent_id]",
-											"value": "",
-											"type": "text",
-											"description": "Optional. Guid of parent question",
-											"disabled": true
-										},
-										{
-											"key": "questions[2][question]",
-											"value": "This is second question",
-											"type": "text"
-										}
-									]
-								},
-								"url": {
-									"raw": "{{base_url}}tests/save_uploaded_questions/TS66",
-									"host": [
-										"{{base_url}}tests"
-									],
-									"path": [
-										"save_uploaded_questions",
-										"TS66"
-									]
-								},
-								"description": "This API will add a new question in test and return test GUID and question GUID. Input parameters are\n\n**question**: required, string (html allowed)\n\n**question_type**: required, (values- mcmc = Multi Choice, tf = True False, la = Essay, comp = Comprehension)\n\n**feedback**: string (html allowed), max length 1000 characters\n\n**answer_feedback**: string (html allowed), max length 1000 characters\n\n**marks**: positive integers with float values (0, 1, 2, 3 ...) (0.25, 0.50 etc)\n\n**neg_marks**: positive integers with float values (0, 1, 2, 3 ...) (0.25, 0.50 etc)\n\n**time**: natural numbers (0, 1, 2, 3 ...). \\[unit measured in seconds\\]\n\n**choice**: required, string (html allowed). Input field must be an array eg\n\nchoice\\[0\\] = {value}\n\nchoice\\[1\\] = {value}\n\nchoice\\[2\\] = {value}\n\n**correct_answer**: at least one required, Allowed values- 0 or 1. Input field must be an array eg\n\ncorrect_answer\\[0\\] = {value}\n\ncorrect_answer\\[1\\] = {value}\n\ncorrect_answer\\[2\\] = {value}\n\n**position**: order of answer choices. Values- 1, 2, 3.... Input field must be an array eg\n\nposition\\[0\\] = {value} 1 or NULL\n\nposition\\[1\\] = {value} 2 or NULL\n\nposition\\[2\\] = {value} 3 or NULL\n\n**status**: 0 = Unpublished, 1 = Published\n\n**created_by**: user guid"
-							},
-							"response": []
-						},
-						{
 							"name": "Get question details",
 							"id": "5af5d35f-de38-4efe-8a16-f8e460c7c2b7",
 							"protocolProfileBehavior": {
@@ -9017,130 +9060,6 @@
 							"response": []
 						},
 						{
-							"name": "Get test questions",
-							"id": "f3de4719-e850-46c9-902e-7588e082cb3b",
-							"protocolProfileBehavior": {
-								"disableBodyPruning": true
-							},
-							"request": {
-								"method": "GET",
-								"header": [],
-								"url": {
-									"raw": "{{base_url_dev}}tests/questions/MAT59",
-									"host": [
-										"{{base_url_dev}}tests"
-									],
-									"path": [
-										"questions",
-										"MAT59"
-									]
-								},
-								"description": "This API will take two parameters in the URL\n\n1. test guid (required)\n2. choices (0, 1)\n    \n\nThe second parameter choices is for whether answer choices are also needed with the question."
-							},
-							"response": [
-								{
-									"id": "8d4715db-b926-431e-8149-212935e1dbf8",
-									"name": "Example",
-									"originalRequest": {
-										"method": "GET",
-										"header": [],
-										"url": {
-											"raw": "https://developer1.website/dev/caapis/public/tests/get_question/QA00006/1",
-											"protocol": "https",
-											"host": [
-												"developer1",
-												"website"
-											],
-											"path": [
-												"dev",
-												"caapis",
-												"public",
-												"tests",
-												"get_question",
-												"QA00006",
-												"1"
-											]
-										}
-									},
-									"status": "OK",
-									"code": 200,
-									"_postman_previewlanguage": "json",
-									"header": [
-										{
-											"key": "Date",
-											"value": "Tue, 06 Dec 2022 10:29:06 GMT"
-										},
-										{
-											"key": "Server",
-											"value": "Apache"
-										},
-										{
-											"key": "X-Powered-By",
-											"value": "PHP/7.4.33"
-										},
-										{
-											"key": "Access-Control-Allow-Origin",
-											"value": "*"
-										},
-										{
-											"key": "Access-Control-Allow-Headers",
-											"value": "X-API-KEY, Origin,X-Requested-With, Content-Type, Accept, Access-Control-Requested-Method, Authorization"
-										},
-										{
-											"key": "Access-Control-Allow-Methods",
-											"value": "GET, POST, OPTIONS, PATCH, PUT, DELETE"
-										},
-										{
-											"key": "Cache-control",
-											"value": "no-store, max-age=0, no-cache"
-										},
-										{
-											"key": "Strict-Transport-Security",
-											"value": "max-age=63072000; includeSubDomains"
-										},
-										{
-											"key": "X-Frame-Options",
-											"value": "SAMEORIGIN"
-										},
-										{
-											"key": "X-Content-Type-Options",
-											"value": "nosniff"
-										},
-										{
-											"key": "Upgrade",
-											"value": "h2,h2c"
-										},
-										{
-											"key": "Connection",
-											"value": "Upgrade, Keep-Alive"
-										},
-										{
-											"key": "Vary",
-											"value": "Accept-Encoding"
-										},
-										{
-											"key": "Content-Encoding",
-											"value": "gzip"
-										},
-										{
-											"key": "Content-Length",
-											"value": "303"
-										},
-										{
-											"key": "Keep-Alive",
-											"value": "timeout=3, max=500"
-										},
-										{
-											"key": "Content-Type",
-											"value": "application/json; charset=UTF-8"
-										}
-									],
-									"cookie": [],
-									"body": "{\n    \"success\": true,\n    \"message\": \"QUESTION_FOUND\",\n    \"payload\": [\n        {\n            \"question\": {\n                \"ID\": \"6\",\n                \"guid\": \"QA00006\",\n                \"question\": \"What is the capital of India?\",\n                \"question_type\": \"mcsc\",\n                \"feedback\": \"none\",\n                \"answer_feedback\": \"\",\n                \"marks\": \"1\",\n                \"neg_marks\": \"0\",\n                \"time\": \"30\",\n                \"status\": \"1\",\n                \"created_by\": \"CA000030\",\n                \"created_on\": \"2022-12-05 05:27:56\"\n            },\n            \"choices\": [\n                {\n                    \"choice\": \"Chennai\",\n                    \"correct_answer\": \"1\",\n                    \"status\": \"1\",\n                    \"position\": \"1\"\n                },\n                {\n                    \"choice\": \"Lucknow\",\n                    \"correct_answer\": \"0\",\n                    \"status\": \"1\",\n                    \"position\": \"2\"\n                },\n                {\n                    \"choice\": \"New Delhi\",\n                    \"correct_answer\": \"0\",\n                    \"status\": \"1\",\n                    \"position\": \"3\"\n                }\n            ]\n        }\n    ]\n}"
-								}
-							]
-						},
-						{
 							"name": "Search question",
 							"id": "95ee6866-7086-4b54-97b6-ad00b726eed7",
 							"protocolProfileBehavior": {
@@ -9169,83 +9088,6 @@
 										"SJT1"
 									]
 								}
-							},
-							"response": []
-						},
-						{
-							"name": "Remove question from test",
-							"id": "363cea4e-8365-468b-a71d-44c8eacbbe7d",
-							"protocolProfileBehavior": {
-								"disableBodyPruning": true
-							},
-							"request": {
-								"method": "POST",
-								"header": [],
-								"body": {
-									"mode": "formdata",
-									"formdata": [
-										{
-											"key": "questions[0]",
-											"value": "QN5",
-											"type": "text",
-											"disabled": true
-										},
-										{
-											"key": "questions[1]",
-											"value": "QN6",
-											"type": "text"
-										},
-										{
-											"key": "questions[2]",
-											"value": "QN7",
-											"type": "text"
-										},
-										{
-											"key": "questions[3]",
-											"value": "QN8",
-											"type": "text"
-										},
-										{
-											"key": "updated_by",
-											"value": "{{admin_guid}}",
-											"type": "text"
-										}
-									]
-								},
-								"url": {
-									"raw": "{{base_url_dev}}tests/remove_question/TS58",
-									"host": [
-										"{{base_url_dev}}tests"
-									],
-									"path": [
-										"remove_question",
-										"TS58"
-									]
-								},
-								"description": "API to remove one question from a test. Required url parameters are **test guid** and **question guid**."
-							},
-							"response": []
-						},
-						{
-							"name": "Remove all questions from test",
-							"id": "0ee55bdd-3414-45bb-9893-8b18deabb667",
-							"protocolProfileBehavior": {
-								"disableBodyPruning": true
-							},
-							"request": {
-								"method": "DELETE",
-								"header": [],
-								"url": {
-									"raw": "{{base_url_dev}}tests/remove_all_questions/ts66",
-									"host": [
-										"{{base_url_dev}}tests"
-									],
-									"path": [
-										"remove_all_questions",
-										"ts66"
-									]
-								},
-								"description": "API to remove all questions from a test. Required url parameter is test guid."
 							},
 							"response": []
 						}
@@ -10113,6 +9955,57 @@
 							]
 						},
 						{
+							"name": "Submit single question during test",
+							"id": "f0a4cc78-d050-4778-b28d-ebb2cd0034d5",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "user_guid",
+											"value": "",
+											"description": "User guid",
+											"type": "text"
+										},
+										{
+											"key": "session_id",
+											"value": "",
+											"description": "Test session id",
+											"type": "text"
+										},
+										{
+											"key": "answer[PIP57]",
+											"value": "choice_0",
+											"description": "Answer array. Key is question guid, value is answer choice selected",
+											"type": "text"
+										},
+										{
+											"key": "time_taken",
+											"value": "30",
+											"description": "Time taken in seconds to answer the question",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{base_url}}tests/save_question/BAS6",
+									"host": [
+										"{{base_url}}tests"
+									],
+									"path": [
+										"save_question",
+										"BAS6"
+									]
+								}
+							},
+							"response": []
+						},
+						{
 							"name": "Submit test",
 							"id": "e7d60d9c-feec-43a7-8614-87eb91011aef",
 							"protocolProfileBehavior": {
@@ -10813,6 +10706,150 @@
 						}
 					],
 					"id": "e3a3d803-ee98-4f9f-b91e-bf87c551e677"
+				},
+				{
+					"name": "Bookmarks",
+					"item": [
+						{
+							"name": "Bookmark question",
+							"id": "2108a644-107f-4cd8-8fb8-32a843cccf92",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "test_guid",
+											"value": "BAS6",
+											"type": "text"
+										},
+										{
+											"key": "question_guid",
+											"value": "ANA55",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{base_url}}tests/bookmark/add",
+									"host": [
+										"{{base_url}}tests"
+									],
+									"path": [
+										"bookmark",
+										"add"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "My bookmarks",
+							"id": "f855015e-a286-4ae8-be85-9bc22000cf5b",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "test_guid",
+											"value": "",
+											"description": "Optional filter.",
+											"type": "text"
+										},
+										{
+											"key": "search",
+											"value": "",
+											"description": "Optional filter.",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{base_url}}tests/bookmark/list",
+									"host": [
+										"{{base_url}}tests"
+									],
+									"path": [
+										"bookmark",
+										"list"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "View bookmark",
+							"id": "40588568-b3ff-4cf0-813a-dc314a2c8b3d",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}tests/bookmark/PIP57/view",
+									"host": [
+										"{{base_url}}tests"
+									],
+									"path": [
+										"bookmark",
+										"PIP57",
+										"view"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete bookmark",
+							"id": "69b98f83-599b-45c6-ab0c-751a2844c3d4",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "test_guid",
+											"value": "BAS6",
+											"description": "Required",
+											"type": "text"
+										},
+										{
+											"key": "question_guid",
+											"value": "ANA55",
+											"description": "Required",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{base_url}}tests/bookmark/delete",
+									"host": [
+										"{{base_url}}tests"
+									],
+									"path": [
+										"bookmark",
+										"delete"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"id": "f593233a-41aa-4561-b48f-b5b92f1bc05d"
 				}
 			],
 			"id": "de288ab4-9cf6-4d6a-b5af-4694fb0a766c"
