@@ -63,11 +63,15 @@
 											]
 										},
 										"url": {
-											"raw": "{{base_url}}reset_password/verify_username",
+											"raw": "https://developer1.website/dev/caapisreset_password/verify_username",
+											"protocol": "https",
 											"host": [
-												"{{base_url}}reset_password"
+												"developer1",
+												"website"
 											],
 											"path": [
+												"dev",
+												"caapisreset_password",
 												"verify_username"
 											]
 										}
@@ -3801,14 +3805,14 @@
 								"method": "DELETE",
 								"header": [],
 								"url": {
-									"raw": "{{base_url}}lesson/content/delete/66",
+									"raw": "{{base_url}}course/content/PHP4/delete",
 									"host": [
-										"{{base_url}}lesson"
+										"{{base_url}}course"
 									],
 									"path": [
 										"content",
-										"delete",
-										"66"
+										"PHP4",
+										"delete"
 									]
 								}
 							},
@@ -6622,7 +6626,7 @@
 							"response": []
 						},
 						{
-							"name": "Add question",
+							"name": "Create new question in test",
 							"id": "aac688a8-c84f-42fe-b974-fa04416d14d1",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
@@ -9967,12 +9971,6 @@
 									"mode": "formdata",
 									"formdata": [
 										{
-											"key": "user_guid",
-											"value": "",
-											"description": "User guid",
-											"type": "text"
-										},
-										{
 											"key": "session_id",
 											"value": "",
 											"description": "Test session id",
@@ -13096,9 +13094,9 @@
 									]
 								},
 								"url": {
-									"raw": "{{base_url_dev}}settings/registration/common",
+									"raw": "{{base_url}}settings/registration/common",
 									"host": [
-										"{{base_url_dev}}settings"
+										"{{base_url}}settings"
 									],
 									"path": [
 										"registration",
@@ -13163,9 +13161,9 @@
 									]
 								},
 								"url": {
-									"raw": "{{base_url_dev}}settings/registration/valid_fields",
+									"raw": "{{base_url}}settings/registration/valid_fields",
 									"host": [
-										"{{base_url_dev}}settings"
+										"{{base_url}}settings"
 									],
 									"path": [
 										"registration",
@@ -13230,9 +13228,9 @@
 									]
 								},
 								"url": {
-									"raw": "{{base_url_dev}}settings/general/save_theme",
+									"raw": "{{base_url}}settings/general/save_theme",
 									"host": [
-										"{{base_url_dev}}settings"
+										"{{base_url}}settings"
 									],
 									"path": [
 										"general",
@@ -13252,9 +13250,9 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{base_url_dev}}settings/general/get_theme",
+									"raw": "{{base_url}}settings/general/get_theme",
 									"host": [
-										"{{base_url_dev}}settings"
+										"{{base_url}}settings"
 									],
 									"path": [
 										"general",
@@ -13647,6 +13645,551 @@
 				}
 			],
 			"id": "a44bfc10-dcbe-4822-9415-2e241b233e46"
+		},
+		{
+			"name": "Question Bank",
+			"item": [
+				{
+					"name": "Create new question",
+					"id": "a74a982b-c9e6-49d5-bfda-dc526f52182d",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "question",
+									"value": "What does PHP stand for?",
+									"description": "Required. Actual question. Any string value including htm formatting is allowed",
+									"type": "text"
+								},
+								{
+									"key": "userfile",
+									"type": "file",
+									"description": "Optional. File attachment",
+									"src": "/F:/Download/Project Files/Coaching App/QA6/circle.jpg"
+								},
+								{
+									"key": "question_type",
+									"value": "mcmc",
+									"description": "Required. Accepted values [mcmc, tf, la, comp\nmcmc = Multi Choice\ntf = True Flase\nla = Essay\ncomp = Comprehensive",
+									"type": "text"
+								},
+								{
+									"key": "choice[0]",
+									"value": " Private Home Page",
+									"description": "Aleast 1 answer choice is required.. wysiwyg",
+									"type": "text"
+								},
+								{
+									"key": "choice[1]",
+									"value": " Personal Hypertext Processor",
+									"description": "wysiwyg",
+									"type": "text"
+								},
+								{
+									"key": "choice[2]",
+									"value": " PHP: Hypertext Preprocessor",
+									"description": "wysiwyg",
+									"type": "text"
+								},
+								{
+									"key": "choice[3]",
+									"value": "Announce deadlines for each task the team gets, and reprimand employees who don’t finish their tasks on time",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "correct_answer[0]",
+									"value": "0",
+									"description": "Atleast 1 value required. This is the array to indicate correct answer(s). Array keys should match the keys from choice keys above. \n0 or 1",
+									"type": "text"
+								},
+								{
+									"key": "correct_answer[1]",
+									"value": "0",
+									"description": "0, 1",
+									"type": "text"
+								},
+								{
+									"key": "correct_answer[2]",
+									"value": "1",
+									"description": "0, 1",
+									"type": "text"
+								},
+								{
+									"key": "correct_answer[3]",
+									"value": "0",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "order[0]",
+									"value": "1",
+									"description": "Default ordering will be according to array values ie ,2,3. Array keys should match the keys from choice keys above",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "order[1]",
+									"value": "2",
+									"description": "Natural number",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "order[2]",
+									"value": "3",
+									"description": "NAtural number",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "order[3]",
+									"value": "4",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "feedback",
+									"value": "",
+									"description": "Optional. wysiwyg editor",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "answer_feedback",
+									"value": "",
+									"description": "Optional. wysiwyg editor",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "marks",
+									"value": "1.5",
+									"description": "Optional. Positive floating numbers only",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "neg_marks",
+									"value": "0",
+									"description": "Optional. Positive floating numbers only",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "time",
+									"value": "30",
+									"description": "Time in seconds. Natural numbers only",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "parent_id",
+									"value": "QN110",
+									"type": "text",
+									"description": "Optional",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}qb/questions/create",
+							"host": [
+								"{{base_url}}qb"
+							],
+							"path": [
+								"questions",
+								"create"
+							]
+						},
+						"description": "This API will add a new question in test and return test GUID and question GUID. Input parameters are\n\n**question**: required, string (html allowed)\n\n**question_type**: required, (values- mcmc = Multi Choice, tf = True False, la = Essay, comp = Comprehension)\n\n**feedback**: string (html allowed), max length 1000 characters\n\n**answer_feedback**: string (html allowed), max length 1000 characters\n\n**marks**: positive integers with float values (0, 1, 2, 3 ...) (0.25, 0.50 etc)\n\n**neg_marks**: positive integers with float values (0, 1, 2, 3 ...) (0.25, 0.50 etc)\n\n**time**: natural numbers (0, 1, 2, 3 ...). \\[unit measured in seconds\\]\n\n**choice**: required, string (html allowed). Input field must be an array eg\n\nchoice\\[0\\] = {value}\n\nchoice\\[1\\] = {value}\n\nchoice\\[2\\] = {value}\n\n**correct_answer**: at least one required, Allowed values- 0 or 1. Input field must be an array eg\n\ncorrect_answer\\[0\\] = {value}\n\ncorrect_answer\\[1\\] = {value}\n\ncorrect_answer\\[2\\] = {value}\n\n**position**: order of answer choices. Values- 1, 2, 3.... Input field must be an array eg\n\nposition\\[0\\] = {value} 1 or NULL\n\nposition\\[1\\] = {value} 2 or NULL\n\nposition\\[2\\] = {value} 3 or NULL\n\n**status**: 0 = Unpublished, 1 = Published\n\n**created_by**: user guid"
+					},
+					"response": [
+						{
+							"id": "818b8c3b-4e63-4703-a9d1-9ad3fba466e1",
+							"name": "Add question",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "question",
+											"value": "What is the capital of Britain?",
+											"type": "text"
+										},
+										{
+											"key": "question_type",
+											"value": "mcsc",
+											"type": "text"
+										},
+										{
+											"key": "feedback",
+											"value": "none",
+											"type": "text"
+										},
+										{
+											"key": "answer_feedback",
+											"value": "",
+											"type": "text"
+										},
+										{
+											"key": "marks",
+											"value": "1",
+											"type": "text"
+										},
+										{
+											"key": "neg_marks",
+											"value": "0",
+											"type": "text"
+										},
+										{
+											"key": "time",
+											"value": "30",
+											"type": "text"
+										},
+										{
+											"key": "status",
+											"value": "1",
+											"type": "text"
+										},
+										{
+											"key": "created_by",
+											"value": "CA000030",
+											"type": "text"
+										},
+										{
+											"key": "choice[0]",
+											"value": "London",
+											"type": "text"
+										},
+										{
+											"key": "choice[1]",
+											"value": "Bristol",
+											"type": "text"
+										},
+										{
+											"key": "choice[2]",
+											"value": "Manchester",
+											"type": "text"
+										},
+										{
+											"key": "correct_answer[0]",
+											"value": "1",
+											"type": "text"
+										},
+										{
+											"key": "correct_answer[1]",
+											"value": "0",
+											"type": "text"
+										},
+										{
+											"key": "correct_answer[2]",
+											"value": "0",
+											"type": "text"
+										},
+										{
+											"key": "order[0]",
+											"value": "1",
+											"type": "text"
+										},
+										{
+											"key": "order[1]",
+											"value": "2",
+											"type": "text"
+										},
+										{
+											"key": "order[2]",
+											"value": "3",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "https://developer1.website/dev/caapis/public/tests/create_question/TE00008",
+									"protocol": "https",
+									"host": [
+										"developer1",
+										"website"
+									],
+									"path": [
+										"dev",
+										"caapis",
+										"public",
+										"tests",
+										"create_question",
+										"TE00008"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Mon, 05 Dec 2022 12:28:07 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/7.4.33"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "X-API-KEY, Origin,X-Requested-With, Content-Type, Accept, Access-Control-Requested-Method, Authorization"
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "GET, POST, OPTIONS, PATCH, PUT, DELETE"
+								},
+								{
+									"key": "Cache-control",
+									"value": "no-store, max-age=0, no-cache"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=63072000; includeSubDomains"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Upgrade",
+									"value": "h2,h2c"
+								},
+								{
+									"key": "Connection",
+									"value": "Upgrade, Keep-Alive"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								},
+								{
+									"key": "Content-Length",
+									"value": "117"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=3, max=500"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=UTF-8"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"QUESTION_ADDED_SUCCESSFULLY\",\n    \"payload\": {\n        \"test_id\": \"TE00008\",\n        \"question_id\": \"QA00008\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Bulk upload questions",
+					"id": "da07b11e-4c5f-4053-b5bb-c47fc83d8c8d",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "userfile",
+									"type": "file",
+									"value": null
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}qb/questions/upload",
+							"host": [
+								"{{base_url}}qb"
+							],
+							"path": [
+								"questions",
+								"upload"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List, search and filter all questions in question bank",
+					"id": "3934e6d0-a1fd-49ea-a8eb-326c4085bb9f",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "results_per_page",
+									"value": "2",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "page",
+									"value": "1",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "search",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "order_by",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}qb/questions/list",
+							"host": [
+								"{{base_url}}qb"
+							],
+							"path": [
+								"questions",
+								"list"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get details of single question",
+					"id": "b58015c6-1029-44db-8299-2ff2721e2139",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}qb/questions/PIP57/view",
+							"host": [
+								"{{base_url}}qb"
+							],
+							"path": [
+								"questions",
+								"PIP57",
+								"view"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete single question",
+					"id": "6f012023-5279-40a9-a651-26f9601833b0",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}qb/questions/WHA71/delete",
+							"host": [
+								"{{base_url}}qb"
+							],
+							"path": [
+								"questions",
+								"WHA71",
+								"delete"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Bulk delete questions",
+					"id": "7d2e6810-3251-46db-bee9-d5232af5f082",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "questions[]",
+									"value": "WHA65",
+									"type": "text"
+								},
+								{
+									"key": "questions[]",
+									"value": "WHA66",
+									"type": "text"
+								},
+								{
+									"key": "questions[]",
+									"value": "WHA67",
+									"type": "text"
+								},
+								{
+									"key": "questions[]",
+									"value": "WHA68",
+									"type": "text"
+								},
+								{
+									"key": "questions[]",
+									"value": "WHA69",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}qb/questions/delete",
+							"host": [
+								"{{base_url}}qb"
+							],
+							"path": [
+								"questions",
+								"delete"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"id": "bda759ed-fc4e-4665-b2ad-476517a7daa4"
 		}
 	],
 	"auth": {
